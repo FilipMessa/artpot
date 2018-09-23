@@ -6,6 +6,7 @@ const theme = {
   },
   colors: {
     black: '#030303',
+    nobel: '#B5B5B5',
   },
 }
 
