@@ -1,4 +1,13 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier", "prettier/react", "prettier/standard"]
+  "extends": ["airbnb", "prettier", "prettier/react", "prettier/standard"],
+  "rules": {
+    "flowtype/require-valid-file-annotation": [
+      "error",
+      "always",
+      {
+        "annotationStyle": "line"
+      }
+    ]
+  }
 }
