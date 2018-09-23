@@ -1,4 +1,7 @@
 {
+  "env": {
+    "jest": true
+  },
   "parser": "babel-eslint",
   "plugins": ["flowtype"],
   "extends": [
@@ -9,6 +12,7 @@
     "plugin:flowtype/recommended"
   ],
   "rules": {
+    "no-shadow": ["error", { "allow": ["theme"] }],
     "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
     "flowtype/require-valid-file-annotation": [
       "error",

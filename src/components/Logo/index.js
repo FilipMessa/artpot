@@ -2,14 +2,18 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { Link as GatsbyLink } from 'gatsby'
+import theme from '../../theme/index'
 
-// TODO theme
-const MyLink = styled(Link)`
+const Link = styled(GatsbyLink)`
   font-size: 0.9642857142857143rem;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.black};
 `
+
+Link.defaultProps = {
+  theme,
+}
 
 // TODO add get from config
 const LogoConfig = {
@@ -19,9 +23,9 @@ const LogoConfig = {
 
 const Logo = () => (
   <div>
-    <MyLink to={LogoConfig.url} aria-label={LogoConfig.label}>
+    <Link to={LogoConfig.url} aria-label={LogoConfig.label}>
       {LogoConfig.label}
-    </MyLink>
+    </Link>
   </div>
 )
 

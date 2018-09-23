@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout render 1`] = `
+<body>
+  <div>
+    <div>
+      Loading (StaticQuery)
+    </div>
+  </div>
+</body>
+`;

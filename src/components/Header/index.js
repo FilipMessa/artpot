@@ -11,10 +11,14 @@ const Container = styled.header`
   justify-content: space-between;
 `
 
-const Header = () => (
+type Props = {
+  onClick: () => void,
+}
+
+const Header = ({ onClick }: Props) => (
   <Container>
     <Logo />
-    <BurgerButton />
+    <BurgerButton onClick={onClick} />
   </Container>
 )
 
