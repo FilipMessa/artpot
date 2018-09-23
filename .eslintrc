@@ -9,6 +9,7 @@
     "plugin:flowtype/recommended"
   ],
   "rules": {
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
     "flowtype/require-valid-file-annotation": [
       "error",
       "always",

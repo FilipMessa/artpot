@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "author": "Filip Messa <filip.messa@gmail.com>",
   "dependencies": {
+    "babel-plugin-flow-react-proptypes": "^24.1.2",
     "babel-plugin-styled-components": "^1.7.1",
     "gatsby": "^2.0.0",
     "gatsby-plugin-manifest": "^2.0.2",
@@ -13,7 +14,9 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "styled-components": "^3.4.9"
+    "styled-components": "^4.0.0-beta.8",
+    "styled-media-query": "^2.0.2",
+    "styled-reset": "^1.5.0"
   },
   "license": "MIT",
   "scripts": {
@@ -26,6 +29,7 @@
     "flow:check": "flow"
   },
   "devDependencies": {
+    "@babel/preset-flow": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
     "babel-preset-flow": "^6.23.0",

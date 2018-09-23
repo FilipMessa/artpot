@@ -1,13 +1,18 @@
 // @flow
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import Helmet from 'react-helmet'
+import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import theme from '../theme/index'
+import GlobalStyle from './GlobalStyles'
+import Navigation from './Navigation/index'
+import Header from './Header'
 
-import Header from './header'
-import './layout.css'
+const Container = styled.div`
+  padding: 2em;
+`
 
-const Layout = ({ children }) => (
+const Layout = ({ children }: { children: React.Node }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -19,34 +24,29 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
-          {children}
-        </div>
-      </>
+      <ThemeProvider theme={theme}>
+        <>
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              { name: 'description', content: 'Sample' },
+              { name: 'keywords', content: 'sample, something' },
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
+          <Container>
+            <Header />
+            <div>
+              <Navigation />
+            </div>
+            <div>{children}</div>
+          </Container>
+          <GlobalStyle />
+        </>
+      </ThemeProvider>
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout
