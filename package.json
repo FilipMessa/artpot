@@ -53,6 +53,6 @@
     "jest-dom": "^1.12.1",
     "jest-styled-components": "^6.2.1",
     "prettier": "^1.14.2",
-    "react-testing-library": "^5.1.0"
+    "react-testing-library": "^5.2.0"
   }
 }
