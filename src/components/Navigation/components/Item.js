@@ -1,11 +1,11 @@
 // @flow
 
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { Link as GatsbyLink } from 'gatsby'
 import styled from 'styled-components'
 import uuid from 'uuid'
 import { MdArrowDropDown } from 'react-icons/md'
-import theme from '../../../theme/index'
+import defaultTheme from '../../../theme/index'
 
 type ItemType = {
   url: string,
@@ -47,20 +47,18 @@ const Label = styled.span`
     }
   }
 `
+Label.defaultProps = {
+  theme: defaultTheme,
+}
 
 const ListItem = styled.li`
   padding: 2px 0;
   cursor: pointer;
 `
-ListItem.defaultProps = {
-  theme,
-}
 
 const SubList = styled.ul`
   margin-top: 1.3rem;
 `
-
-const IconWrapper = styled.div``
 
 const Icon = styled(MdArrowDropDown)`
   height: 15px;
@@ -80,18 +78,31 @@ class Item extends React.Component<Props, State> {
 
   render() {
     const { url, label, isActive, list } = this.props
+    const { isOpen } = this.state
     if (list) {
       return (
         <ListItem>
-          <Label isActive={this.state.isOpen} onClick={this.toggle}>
+          <Label
+            data-testid="navigation-list-label"
+            isActive={isOpen}
+            onClick={this.toggle}
+          >
             {label}
-            <Icon isOpen={this.state.isOpen} />
+            <Icon isOpen={isOpen} />
           </Label>
-          {this.state.isOpen && (
+          {isOpen && (
             <SubList>
               {list.map(item => (
                 <ListItem key={uuid()}>
-                  <Label>{item.label}</Label>
+                  <Label>
+                    <GatsbyLink
+                      data-testid="navigation-link"
+                      alt={item.label}
+                      to={item.url}
+                    >
+                      {item.label}
+                    </GatsbyLink>
+                  </Label>
                 </ListItem>
               ))}
             </SubList>
@@ -102,9 +113,9 @@ class Item extends React.Component<Props, State> {
     return (
       <ListItem>
         <Label isActive={isActive}>
-          <Link alt={label} to={url}>
+          <GatsbyLink data-testid="navigation-link" alt={label} to={url}>
             {label}
-          </Link>
+          </GatsbyLink>
         </Label>
       </ListItem>
     )

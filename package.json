@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "author": "Filip Messa <filip.messa@gmail.com>",
   "dependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "babel-plugin-flow-react-proptypes": "^24.1.2",
     "babel-plugin-styled-components": "^1.8.0",
     "gatsby": "^2.0.22",
