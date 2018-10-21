@@ -3,21 +3,17 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Item from './components/Item'
 
-const Container = styled.ul``
+const List = styled.ul``
 
 const Navigation = () => (
   <nav>
-    <Container>
-      <li>
-        <Item>Page 1</Item>
-      </li>
-      <li>
-        <Item>Page 2</Item>
-      </li>
-      <li>
-        <Item>Page 3</Item>
-      </li>
-    </Container>
+    <List>
+      <Item label="home" url="#" />
+      <Item
+        label="works"
+        list={[{ label: 'item-1', url: '#' }, { label: 'item-2', url: '#' }]}
+      />
+    </List>
   </nav>
 )
 

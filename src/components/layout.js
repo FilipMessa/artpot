@@ -37,7 +37,7 @@ const Layout = ({ children }: { children: React.Node }) => (
           </Helmet>
           <Container>
             <Header />
-            <div>
+            <div style={{ marginTop: '2em' }}>
               <Navigation />
             </div>
             <div>{children}</div>
