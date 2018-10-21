@@ -29,7 +29,8 @@
     "format": "prettier --write '**/*.js'",
     "test": "jest",
     "lint": "eslint .",
-    "flow:check": "flow"
+    "flow:check": "flow",
+    "test-ci": "yarn lint && yarn flow:check && yarn test"
   },
   "devDependencies": {
     "@babel/core": "7.1.0",
