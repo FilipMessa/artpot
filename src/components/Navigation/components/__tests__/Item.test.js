@@ -18,9 +18,7 @@ test('<ListItem> render as link.', () => {
 })
 
 test('<ListItem> render as the list.', () => {
-  const { getByTestId, getByText, debug } = render(
-    <Item label="Works" list={data} />
-  )
+  const { getByTestId, getByText } = render(<Item label="Works" list={data} />)
   expect(getByText('Works')).toBeDefined()
 
   fireEvent.click(getByTestId('navigation-list-label'))
