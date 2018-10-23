@@ -1,7 +1,4 @@
-// @flow strict
-import styled from 'styled-components'
-
-export default styled.button`
+.selector13 {
    {
     cursor: pointer;
     border: none;
@@ -22,7 +19,8 @@ export default styled.button`
     border: 0;
     padding: 0;
   }
+
   &:focus {
     outline: none;
   }
-`
+}

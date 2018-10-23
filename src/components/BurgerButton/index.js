@@ -1,12 +1,4 @@
-// @flow strict
-
-import * as React from 'react'
-import styled from 'styled-components'
-import media from 'styled-media-query'
-import BlankButton from '../BlankButton'
-import theme from '../../theme/index'
-
-const Container = styled(BlankButton)`
+.selector3 {
   display: flex;
   flex-direction: column;
 
@@ -14,31 +6,15 @@ const Container = styled(BlankButton)`
     opacity: 0.5;
   }
 
-  ${media.greaterThan('medium')`
-    display: none
-  `};
-`
+  -styled-mixin0:
+    dummyValue
+    
+    ;
+}
 
-const Line = styled.span`
+.selector4 {
   width: 30px;
   height: 2px;
   margin: 2px 0;
-  background-color: ${({ theme }) => theme.colors.black};
-`
-Line.defaultProps = {
-  theme,
+  background-color: $dummyValue;
 }
-
-type Props = {
-  onClick: () => void,
-}
-
-const BurgerButton = ({ onClick }: Props) => (
-  <Container onClick={onClick}>
-    <Line />
-    <Line />
-    <Line />
-  </Container>
-)
-
-export default BurgerButton
