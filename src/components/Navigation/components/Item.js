@@ -63,7 +63,6 @@ const SubList = styled.ul`
 const Icon = styled(MdArrowDropDown)`
   height: 15px;
   width: 15px;
-
   transform: rotate(${({ isOpen }) => (isOpen ? 180 : 0)}deg);
 `
 

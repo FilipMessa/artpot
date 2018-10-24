@@ -15,7 +15,6 @@ export default styled.button`
     line-height: normal;
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
-    -webkit-appearance: none;
   }
 
   &::-moz-focus-inner {
