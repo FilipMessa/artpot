@@ -14,9 +14,9 @@ type ItemType = {
 
 type Props = {
   label: string,
-  url: string,
-  isActive: boolean,
-  list: Array<ItemType>,
+  url?: string,
+  isActive?: boolean,
+  list?: Array<ItemType>,
 }
 
 type State = {
