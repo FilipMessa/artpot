@@ -27,14 +27,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "flow": "flow check",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
     "test": "jest",
     "lint": "eslint .",
     "lint:css": "stylelint './src/**/*.js'",
-    "flow:check": "flow",
+    "flow:check": "flow check",
     "test-ci": "yarn lint && yarn lint:css && yarn flow:check && yarn test"
   },
   "devDependencies": {
