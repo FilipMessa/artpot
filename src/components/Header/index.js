@@ -11,7 +11,7 @@ const Container = styled.header`
 `
 
 const Header = () => (
-  <Container>
+  <Container data-testid="header">
     <Logo />
   </Container>
 )

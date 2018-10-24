@@ -3,14 +3,24 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import styled, { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import theme from '../theme/index'
-import GlobalStyle from './GlobalStyles'
-import Navigation from './Navigation/index'
-import Header from './Header'
+import theme from '../../theme'
+import GlobalStyle from '../styled/GlobalStyles'
+import Navigation from '../Navigation/index'
+import Header from '../Header'
 
 const Container = styled.div`
   padding: 2em;
 `
+
+export const PureLayout = ({ children }: { children: React.Node }) => (
+  <Container>
+    <Header />
+    <div style={{ marginTop: '2em' }}>
+      <Navigation />
+    </div>
+    <div>{children}</div>
+  </Container>
+)
 
 const Layout = ({ children }: { children: React.Node }) => (
   <StaticQuery
@@ -35,13 +45,7 @@ const Layout = ({ children }: { children: React.Node }) => (
           >
             <html lang="en" />
           </Helmet>
-          <Container>
-            <Header />
-            <div style={{ marginTop: '2em' }}>
-              <Navigation />
-            </div>
-            <div>{children}</div>
-          </Container>
+          <PureLayout>{children}</PureLayout>
           <GlobalStyle />
         </>
       </ThemeProvider>
