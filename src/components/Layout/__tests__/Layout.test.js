@@ -1,10 +1,11 @@
 // @flow
+/* eslint-disable no-console */
 import React from 'react'
 import { render } from 'react-testing-library'
 
 import { PureLayout as Layout } from '../index'
 
-// eslint-disable-next-line no-console
+// $FlowTest
 console.error = jest.fn()
 
 describe('Layout', () => {
