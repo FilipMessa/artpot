@@ -2,7 +2,7 @@
 
 const theme = {
   typography: {
-    defaultSize: '13px',
+    defaultSize: '16px',
   },
   colors: {
     black: '#030303',

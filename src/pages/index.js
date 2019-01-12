@@ -33,12 +33,12 @@ const ImageWrapper = styled.div`
 `
 
 const IndexPage = ({ data }: { data: Data }) => (
-    <Layout>
-      <ImageWrapper>
-        <Img fluid={data.introImage.childImageSharp.fluid} />
-      </ImageWrapper>
-    </Layout>
-  )
+  <Layout>
+    <ImageWrapper>
+      <Img fluid={data.introImage.childImageSharp.fluid} />
+    </ImageWrapper>
+  </Layout>
+)
 
 export default IndexPage
 
