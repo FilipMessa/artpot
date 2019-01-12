@@ -3,7 +3,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import Logo from '../Logo'
+import Logo from './Logo'
 
 const Container = styled.header`
   display: flex;
