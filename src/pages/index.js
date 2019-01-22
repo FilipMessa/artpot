@@ -1,11 +1,10 @@
 // @flow
 
 import * as React from 'react'
-import styled from 'styled-components'
-import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import Poster from '../components/Poster'
 
 type Fluid = {
   base64: string,
@@ -19,24 +18,17 @@ type ChildImageSharp = {
   fluid: Fluid,
 }
 
-type IntroImage = {
+type Image = {
   childImageSharp: ChildImageSharp,
 }
 
 type Data = {
-  introImage: IntroImage,
+  poster: Image,
 }
-
-const ImageWrapper = styled.div`
-  max-width: 600px;
-  margin: 3em 0;
-`
 
 const IndexPage = ({ data }: { data: Data }) => (
   <Layout>
-    <ImageWrapper>
-      <Img fluid={data.introImage.childImageSharp.fluid} />
-    </ImageWrapper>
+    <Poster data={data} />
   </Layout>
 )
 
@@ -44,12 +36,6 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    introImage: file(relativePath: { eq: "intro.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+    ...SiteInformation
   }
 `

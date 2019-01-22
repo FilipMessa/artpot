@@ -7,9 +7,10 @@ import theme from '../../theme/index'
 import { LogoConfig } from '../../configs'
 
 const Link = styled(GatsbyLink)`
-  font-size: 0.9642857142857143em;
+  font-size: 0.84375em;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.black};
+  padding: 1.063em 0;
 `
 
 Link.defaultProps = {
