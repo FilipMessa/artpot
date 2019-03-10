@@ -29,5 +29,9 @@ module.exports = {
   },
   testURL: 'http://localhost',
   setupFiles: ['<rootDir>/loadershim.js'],
-  setupTestFrameworkScriptFile: require.resolve('./jest.setup.js'),
+  setupFilesAfterEnv: [
+    'jest-styled-components',
+    'react-testing-library/cleanup-after-each',
+    'jest-dom/extend-expect',
+  ],
 }
