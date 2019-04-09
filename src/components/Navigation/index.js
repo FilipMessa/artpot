@@ -48,7 +48,9 @@ class Navigation extends React.Component<Props, State> {
               <NavItem
                 key={route.id}
                 route={route}
-                onClick={() => console.log('TODO')}
+                onClick={() => {
+                  // TODO
+                }}
               />
             ))}
           </SubContainer>
