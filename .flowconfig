@@ -14,3 +14,6 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpected
 
 [strict]
+
+[version]
+0.96.0
