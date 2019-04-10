@@ -2,26 +2,34 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
-import type { RouteType } from './NavigationTypes'
+import { Link } from 'gatsby'
 
-const Item = styled.li`
-  font-size: ${({ theme }) => theme.components.navigation.item.fontSize};
+const Item = styled(Link)`
   padding: 2px 0;
   cursor: pointer;
-  opacity: ${({ isActive }) => (isActive ? 0.4 : 1)};
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+  font-size: ${({ theme }) => theme.components.navigation.item.fontSize};
+
   &:hover {
     opacity: 0.4;
   }
 `
 
-type Props = {|
-  +route: RouteType,
-  +isActive?: boolean,
-  +onClick: (route: RouteType) => void,
+export type Props = {|
+  +label: string,
+  +to: string,
+  +partiallyActive?: boolean,
 |}
 
-export default ({ route, isActive = false, onClick }: Props) => (
-  <Item onClick={() => onClick(route)} isActive={isActive}>
-    {route.label}
-  </Item>
+export default ({ label, to, partiallyActive }: Props) => (
+  <li>
+    <Item
+      activeStyle={{ opacity: 0.5 }}
+      partiallyActive={partiallyActive}
+      to={`/${to}`}
+    >
+      {label}
+    </Item>
+  </li>
 )
