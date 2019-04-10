@@ -11,15 +11,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
+        name: `common`,
+        path: `${__dirname}/src/images/common`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
+        name: `paintings`,
+        path: `${__dirname}/src/images/paintings`,
       },
     },
     {
