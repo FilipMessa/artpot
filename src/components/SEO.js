@@ -3,14 +3,22 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-type GraphQLData = { site: { siteMetadata: { title: string } } }
+type GraphQLData = {|
+  +site: {|
+    +siteMetadata: {|
+      +title: string,
+      +description: string,
+      +keywords: string,
+    |},
+  |},
+|}
 
 export const ContentSEO = ({ data }: { data: GraphQLData }) => (
   <Helmet
     title={data.site.siteMetadata.title}
     meta={[
-      { name: 'description', content: 'Sample' },
-      { name: 'keywords', content: 'sample, something' },
+      { name: 'description', content: data.site.siteMetadata.description },
+      { name: 'keywords', content: data.site.siteMetadata.keywords },
     ]}
   >
     <html lang="en" />
@@ -24,6 +32,8 @@ const SEO = () => (
         site {
           siteMetadata {
             title
+            description
+            keywords
           }
         }
       }

@@ -2,6 +2,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Artpot',
+    description: 'Personal art portfolio',
+    keywords: 'art, portfolio, artist, paintings',
   },
   plugins: [
     'gatsby-plugin-styled-components',
