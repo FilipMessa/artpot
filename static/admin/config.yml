@@ -1,0 +1,27 @@
+backend:
+  name: github
+  branch: master
+  repo: FilipMessa/artpot
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: pages
+    label: Pages
+    delete: false
+    files:
+      - file: src/texts/info.md
+        label: About
+        name: about
+        fields:
+          - label: Slug
+            name: slug
+            widget: hidden
+            default: /info
+          - label: Title
+            name: title
+            widget: string
+          - label: Body
+            name: body
+            widget: markdown
