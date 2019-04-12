@@ -10,6 +10,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,8 +21,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `paintings`,
-        path: `${__dirname}/src/images/paintings`,
+        name: `works`,
+        path: `${__dirname}/src/images/works`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `texts`,
+        path: `${__dirname}/src/texts`,
       },
     },
     {
@@ -38,12 +46,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
+        name: 'Artpot',
         short_name: 'Artpot',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
-        display: 'minimal-ui',
+        display: 'browser',
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
