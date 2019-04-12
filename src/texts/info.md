@@ -1,11 +1,10 @@
 ---
-slug: '/info'
-title: 'Curriculum vitae'
+slug: /info
+title: Curriculum vitae
 ---
-
 # Info aka Curriculum vitae
 
-Lorem ipsum dolor amet lyft vexillologist fingerstache hoodie, coloring book vice cold-pressed mumblecore mustache jianbing stumptown taiyaki tumeric. Hexagon hoodie irony readymade authentic man bun slow-carb, fixie gluten-free lyft tote bag wayfarers paleo deep v. Yr mixtape chartreuse kinfolk wayfarers flannel. Shoreditch celiac flexitarian church-key, pug helvetica actually. Fixie organic intelligentsia tofu paleo ennui. Organic fanny pack venmo swag migas pinterest tacos. Pour-over portland keytar tofu literally, kogi humblebrag seitan organic.
+klobasa Lorem ipsum dolor amet lyft vexillologist fingerstache hoodie, coloring book vice cold-pressed mumblecore mustache jianbing stumptown taiyaki tumeric. Hexagon hoodie irony readymade authentic man bun slow-carb, fixie gluten-free lyft tote bag wayfarers paleo deep v. Yr mixtape chartreuse kinfolk wayfarers flannel. Shoreditch celiac flexitarian church-key, pug helvetica actually. Fixie organic intelligentsia tofu paleo ennui. Organic fanny pack venmo swag migas pinterest tacos. Pour-over portland keytar tofu literally, kogi humblebrag seitan organic.
 
 Shabby chic disrupt fanny pack tumblr, brooklyn gentrify affogato succulents kale chips man braid portland austin. Hammock keffiyeh small batch snackwave franzen fanny pack keytar heirloom tote bag. Lyft chambray XOXO williamsburg flannel 8-bit celiac unicorn subway tile. Asymmetrical bespoke kickstarter williamsburg quinoa man bun tumeric truffaut artisan microdosing salvia blue bottle.
 
