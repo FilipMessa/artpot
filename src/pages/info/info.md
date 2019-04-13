@@ -2,7 +2,10 @@
 slug: /info
 title: Curriculum vitae
 ---
+
 # Info aka Curriculum vitae
+
+## Sub head2
 
 klobasa Lorem ipsum dolor amet lyft vexillologist fingerstache hoodie, coloring book vice cold-pressed mumblecore mustache jianbing stumptown taiyaki tumeric. Hexagon hoodie irony readymade authentic man bun slow-carb, fixie gluten-free lyft tote bag wayfarers paleo deep v. Yr mixtape chartreuse kinfolk wayfarers flannel. Shoreditch celiac flexitarian church-key, pug helvetica actually. Fixie organic intelligentsia tofu paleo ennui. Organic fanny pack venmo swag migas pinterest tacos. Pour-over portland keytar tofu literally, kogi humblebrag seitan organic.
 

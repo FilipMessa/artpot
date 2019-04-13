@@ -4,6 +4,8 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 
+import Text from './Text'
+
 type Fluid = {
   base64: string,
   aspectRatio: number,
@@ -41,7 +43,9 @@ const Label = styled.div`
 const Poster = ({ data }: { data: Data }) => (
   <Cont>
     <Image src={data.poster.childImageSharp.fluid.src} />
-    <Label>The Mound, 170x200 cm, oil on canvas, 2018</Label>
+    <Text spaceAfter="large" spaceBefore="small">
+      The Mound, 170x200 cm, oil on canvas, 2018
+    </Text>
   </Cont>
 )
 

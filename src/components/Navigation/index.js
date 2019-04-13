@@ -29,7 +29,6 @@ const Navigation = () => (
                 </div>
               )}
             </Spring>
-            S
           </ul>
         </nav>
       )

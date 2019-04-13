@@ -8,7 +8,7 @@ import Header from './Header'
 import Navigation from './Navigation'
 
 import theme from '../theme'
-import GlobalStyle from './styled/GlobalStyles'
+import GlobalStyle from '../theme/GlobalStyles'
 
 const BaseGrid = styled(Grid)`
   padding: ${({ theme }) => theme.layout.padding};
@@ -25,7 +25,9 @@ const Layout = ({ children }: { children: React.Node }) => (
         <Grid.Unit size={{ tablet: 1, desktop: 1 / 5 }}>
           <Navigation />
         </Grid.Unit>
-        <Grid.Unit size={{ tablet: 1, desktop: 4 / 5 }}>{children}</Grid.Unit>
+        <Grid.Unit size={{ tablet: 1, desktop: 4 / 5 }}>
+          <div>{children}</div>
+        </Grid.Unit>
       </BaseGrid>
       <GlobalStyle />
     </>

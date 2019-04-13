@@ -2,7 +2,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { render } from 'react-testing-library'
-import theme from '../../../theme'
+import theme from '../index'
 
 import GlobalStyles from '../GlobalStyles'
 

@@ -4,6 +4,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import Layout from '../../components/Layout'
+import Text from '../../components/Text'
 
 // TODO own component
 const Paragraph = styled.p`
@@ -21,15 +22,15 @@ const GaleryContainer = styled.div`
 const DetectedLandscape = () => (
   <Layout>
     <h1>Detected Landscape</h1>
-    <Paragraph>
+    <Text>
       The title of the exhibiton Detected landscape refers ot the quest of
       update of dealing with the genere of landscape painting and of th
       landscape as such. The very proad framework of this is update could be
       located in new contemporary geological epoch of Anthropocene and the
       presence..
-    </Paragraph>
+    </Text>
     <GaleryContainer>
-      <span>Gallery</span>
+      <Text>Gallery</Text>
     </GaleryContainer>
   </Layout>
 )
