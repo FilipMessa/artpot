@@ -3,7 +3,7 @@
     "jest": true
   },
   "parser": "babel-eslint",
-  "plugins": ["flowtype"],
+  "plugins": ["flowtype", "react-hooks"],
   "extends": [
     "airbnb",
     "prettier",
@@ -12,6 +12,8 @@
     "plugin:flowtype/recommended"
   ],
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "react/require-default-props": 0,
     "no-shadow": ["error", { "allow": ["theme"] }],
     "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
