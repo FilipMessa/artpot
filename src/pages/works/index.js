@@ -6,14 +6,6 @@ import Img from 'gatsby-image'
 
 import Layout from '../../components/Layout'
 
-type ChildImageSharp = {
-  fluid: Fluid,
-}
-
-type Edges = {
-  node: Node,
-}
-
 type Fluid = {
   base64: string,
   aspectRatio: number,
@@ -22,9 +14,17 @@ type Fluid = {
   sizes: string,
 }
 
+type ChildImageSharp = {
+  fluid: Fluid,
+}
+
 type Node = {
   name: string,
   childImageSharp: ChildImageSharp,
+}
+
+type Edges = {
+  node: Node,
 }
 
 type Works = {
@@ -39,8 +39,8 @@ type Props = {
   data: Data,
 }
 
-const IndexPage = (props: Props) => {
-  const nodes = props.data.works.edges.map(({ node }) => node)
+const IndexPage = ({ data }: Props) => {
+  const nodes = data.works.edges.map(({ node }) => node)
   return (
     <Layout>
       <h1>Works Page</h1>

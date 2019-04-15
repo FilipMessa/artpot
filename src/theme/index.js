@@ -1,7 +1,7 @@
 // @flow
 
 const typography = {
-  defaultSize: '18px',
+  defaultSize: '14px',
   fontSizes: {
     small: '0.777em',
     normal: '1em',

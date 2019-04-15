@@ -2,7 +2,13 @@
 
 const path = require('path')
 
-exports.createPages = async ({ graphql, actions }) => {
+// TODO type "types" correctly
+type Props = {
+  +graphql: string => Object,
+  +actions: Object,
+}
+
+exports.createPages = async ({ graphql, actions }: Props) => {
   const { createPage } = actions
 
   const { data } = await graphql(`

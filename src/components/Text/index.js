@@ -3,6 +3,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+import theme from '../../theme/index'
+
 const getFontSizes = () => ({ size, theme }) => {
   return theme.typography.fontSizes[size]
 }
@@ -43,7 +45,12 @@ const StyledText = styled(({ element: TextElement, children, className }) => (
   margin: 0;
   margin-bottom: ${getSpaceAfter()};
   margin-top: ${getSpaceBefore()};
+  font-weight: ${getWeight()};
 `
+
+StyledText.defaultProps = {
+  theme,
+}
 
 const Text = ({
   children,

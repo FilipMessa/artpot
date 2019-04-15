@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
 import MarkdownRenderer from '../components/MarkdownRenderer'
@@ -14,10 +14,10 @@ type Props = {|
   |},
 |}
 
-const InfoPage = (props: Props) => {
+const InfoPage = ({ data }: Props) => {
   return (
     <Layout>
-      <MarkdownRenderer source={props.data.markdownRemark.rawMarkdownBody} />
+      <MarkdownRenderer source={data.markdownRemark.rawMarkdownBody} />
     </Layout>
   )
 }

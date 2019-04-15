@@ -35,11 +35,6 @@ const Cont = styled.div`
   max-height: 85vh;
 `
 
-const Label = styled.div`
-  font-size: ${({ theme }) => theme.components.poster.label.fontSize};
-  margin: 1.5em 0;
-`
-
 const Poster = ({ data }: { data: Data }) => (
   <Cont>
     <Image src={data.poster.childImageSharp.fluid.src} />

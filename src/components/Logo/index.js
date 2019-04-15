@@ -3,11 +3,13 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
-import theme from '../../theme/index'
+
 import { LogoConfig } from '../../configs'
+import Text from '../Text'
+
+import theme from '../../theme/index'
 
 const Link = styled(GatsbyLink)`
-  font-size: 0.84375em;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.black};
   padding: 1.063em 0;
@@ -24,7 +26,7 @@ const Logo = () => (
     to={LogoConfig.url}
     aria-label={LogoConfig.label}
   >
-    {LogoConfig.label}
+    <Text size="large">{LogoConfig.label}</Text>
   </Link>
 )
 
