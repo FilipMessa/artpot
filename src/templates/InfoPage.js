@@ -14,14 +14,6 @@ type Props = {|
   |},
 |}
 
-const InfoPage = ({ data }: Props) => {
-  return (
-    <Layout>
-      <MarkdownRenderer source={data.markdownRemark.rawMarkdownBody} />
-    </Layout>
-  )
-}
-
 export const query = graphql`
   query InfoPageQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
@@ -29,5 +21,13 @@ export const query = graphql`
     }
   }
 `
+
+const InfoPage = ({ data }: Props) => {
+  return (
+    <Layout>
+      <MarkdownRenderer source={data.markdownRemark.rawMarkdownBody} />
+    </Layout>
+  )
+}
 
 export default InfoPage

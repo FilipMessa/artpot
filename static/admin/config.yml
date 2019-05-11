@@ -11,17 +11,36 @@ collections:
     label: Pages
     delete: false
     files:
-      - file: src/texts/info.md
-        label: About
-        name: about
+      - file: src/pages/content/info.md
+        label: Info
+        name: info
         fields:
-          - label: Slug
-            name: slug
-            widget: hidden
-            default: /info
-          - label: Title
-            name: title
-            widget: string
-          - label: Body
-            name: body
-            widget: markdown
+          - { label: 'Slug', name: 'slug', widget: 'hidden', default: '/info' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - {
+              label: 'Body',
+              name: 'body',
+              widget: 'markdown',
+              buttons:
+                [
+                  'bold',
+                  italic,
+                  link,
+                  'heading-one',
+                  'heading-two',
+                  'bulleted-list',
+                ],
+            }
+      - file: src/pages/content/home.md
+        label: Home
+        name: home
+        fields:
+          - { label: 'Slug', name: 'slug', widget: 'hidden', default: '/' }
+          - { label: 'Title', name: 'title', widget: 'hidden' }
+          - { label: 'Description', name: 'description', widget: 'text' }
+          - {
+              label: 'Image',
+              name: 'poster',
+              widget: 'image',
+              allow_multiple: false,
+            }

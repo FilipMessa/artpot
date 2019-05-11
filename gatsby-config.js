@@ -6,6 +6,7 @@ module.exports = {
     keywords: 'art, portfolio, artist, paintings',
   },
   plugins: [
+    `gatsby-plugin-flow`,
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     `gatsby-transformer-sharp`,
@@ -29,8 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
+        name: `pagesContent`,
+        path: `${__dirname}/src/pages/content`,
       },
     },
     {

@@ -10,9 +10,19 @@ type Props = {
 const HeadingRenderer = ({ level, children }: Props) => {
   switch (level) {
     case 1:
-      return <h1 style={{ color: 'red' }}>{children}</h1>
+      return <h1 style={{ fontWeight: 'bold' }}>{children}</h1>
     case 2:
-      return <h2 style={{ color: 'green' }}>{children}</h2>
+      return (
+        <h2
+          style={{
+            paddingTop: '1rem',
+            lineHeight: '1.2rem',
+            fontWeight: 'bold',
+          }}
+        >
+          {children}
+        </h2>
+      )
     case 3:
       return <h3>{children}</h3>
     case 4:

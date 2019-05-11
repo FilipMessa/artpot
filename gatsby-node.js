@@ -1,14 +1,7 @@
 // @flow
-
 const path = require('path')
 
-// TODO type "types" correctly
-type Props = {
-  +graphql: string => Object,
-  +actions: Object,
-}
-
-exports.createPages = async ({ graphql, actions }: Props) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const { data } = await graphql(`
@@ -27,6 +20,7 @@ exports.createPages = async ({ graphql, actions }: Props) => {
     component: path.resolve('./src/templates/InfoPage.js'),
     context: {
       id: data.markdownRemark.id,
+      slug: data.markdownRemark.frontmatter.slug,
     },
   })
 }
