@@ -39,7 +39,7 @@ const Poster = ({ data }: { data: Data }) => (
   <Cont>
     <Image src={data.poster.childImageSharp.fluid.src} />
     <Text spaceAfter="large" spaceBefore="small">
-      The Mound, 170x200 cm, oil on canvas, 2018
+      {data.description.frontmatter.description}
     </Text>
   </Cont>
 )
@@ -51,6 +51,11 @@ export const query = graphql`
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid
         }
+      }
+    }
+    description: markdownRemark(frontmatter: { slug: { eq: "/" } }) {
+      frontmatter {
+        description
       }
     }
   }

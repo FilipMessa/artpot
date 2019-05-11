@@ -35,12 +35,12 @@ collections:
         label: Home
         name: home
         fields:
-          - { label: 'Slug', name: 'slug', widget: 'hidden', default: '/' }
+          - { label: 'Slug', name: 'slug', widget: 'hidden', default: '/home' }
           - { label: 'Title', name: 'title', widget: 'hidden' }
-          - { label: 'Description', name: 'description', widget: 'text' }
           - {
               label: 'Image',
               name: 'poster',
               widget: 'image',
               allow_multiple: false,
             }
+          - { label: 'Description', name: 'description', widget: 'string' }
