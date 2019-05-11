@@ -35,27 +35,31 @@ const Cont = styled.div`
   max-height: 85vh;
 `
 
-const Poster = ({ data }: { data: Data }) => (
-  <Cont>
-    <Image src={data.poster.childImageSharp.fluid.src} />
-    <Text spaceAfter="large" spaceBefore="small">
-      {data.description.frontmatter.description}
-    </Text>
-  </Cont>
-)
+const Poster = ({ data }: { data: Data }) => {
+  return (
+    <Cont>
+      <Image
+        src={data.markdownRemark.frontmatter.poster.childImageSharp.fluid.src}
+      />
+      <Text spaceAfter="large" spaceBefore="small">
+        {data.markdownRemark.frontmatter.description}
+      </Text>
+    </Cont>
+  )
+}
 
 export const query = graphql`
   fragment SiteInformation on Query {
-    poster: file(relativePath: { eq: "test.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    description: markdownRemark(frontmatter: { slug: { eq: "/" } }) {
+    markdownRemark(frontmatter: { slug: { eq: "/" } }) {
       frontmatter {
         description
+        poster {
+          childImageSharp {
+            fluid(maxWidth: 2000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
