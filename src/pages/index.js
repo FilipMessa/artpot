@@ -18,19 +18,31 @@ type ChildImageSharp = {
   fluid: Fluid,
 }
 
-type Image = {
+type PosterType = {
   childImageSharp: ChildImageSharp,
 }
 
-type Data = {
-  poster: Image,
+type Frontmatter = {
+  description: string,
+  poster: PosterType,
 }
 
-const IndexPage = ({ data }: { data: Data }) => (
-  <Layout>
-    <Poster data={data} />
-  </Layout>
-)
+type MarkdownRemark = {
+  frontmatter: Frontmatter,
+}
+
+type Data = {
+  markdownRemark: MarkdownRemark,
+}
+
+const IndexPage = ({ data }: { data: Data }) => {
+  console.log(JSON.stringify(data), data)
+  return (
+    <Layout>
+      <Poster data={data} />
+    </Layout>
+  )
+}
 
 export default IndexPage
 

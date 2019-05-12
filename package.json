@@ -34,7 +34,7 @@
     "styled-components": "^4.2.0",
     "styled-components-grid": "^2.2.2",
     "styled-media-query": "^2.1.1",
-    "styled-reset": "^2.0.6",
+    "styled-reset": "^2.0.13",
     "uuid": "^3.3.2"
   },
   "license": "MIT",
@@ -67,7 +67,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "flow-bin": "^0.96.0",
+    "flow-bin": "^0.99.1",
     "gatsby-plugin-eslint": "^2.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
@@ -75,12 +75,12 @@
     "jest-styled-components": "^6.3.1",
     "prettier": "^1.16.4",
     "react-testing-library": "^6.1.2",
-    "stylelint": "^9.10.1",
-    "stylelint-config-prettier": "^5.0.0",
-    "stylelint-config-recommended": "^2.1.0",
-    "stylelint-config-standard": "^18.2.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-config-standard": "^18.3.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.6.0"
+    "stylelint-processor-styled-components": "^1.8.0"
   },
   "peerDependencies": {
     "@reach/router": "^"

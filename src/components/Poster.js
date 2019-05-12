@@ -18,10 +18,21 @@ type ChildImageSharp = {
   fluid: Fluid,
 }
 
+type PosterType = {
+  childImageSharp: ChildImageSharp,
+}
+
+type Frontmatter = {
+  description: string,
+  poster: PosterType,
+}
+
+type MarkdownRemark = {
+  frontmatter: Frontmatter,
+}
+
 type Data = {
-  poster: {
-    childImageSharp: ChildImageSharp,
-  },
+  markdownRemark: MarkdownRemark,
 }
 
 const Image = styled.img`
