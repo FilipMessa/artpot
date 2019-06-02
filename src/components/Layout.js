@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react'
+import media from 'styled-media-query'
 
 import styled, { ThemeProvider } from 'styled-components'
-import Grid from 'styled-components-grid'
 import SEO from './SEO'
 import Header from './Header'
 import Navigation from './Navigation'
@@ -10,25 +10,49 @@ import Navigation from './Navigation'
 import theme from '../theme'
 import GlobalStyle from '../theme/GlobalStyles'
 
-const BaseGrid = styled(Grid)`
-  padding: ${({ theme }) => theme.layout.padding};
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas:
+    'header header'
+    'navbar content';
+
+  ${media.lessThan('medium')`
+    grid-template-areas:
+    'header header'
+    'navbar navbar';
+    'content content';
+    `}
+`
+
+const HeaderW = styled.div`
+  grid-area: header;
+`
+
+const Navbar = styled.div`
+  grid-area: navbar;
+`
+
+const Content = styled.div`
+  grid-area: content;
 `
 
 const Layout = ({ children }: { children: React.Node }) => (
   <ThemeProvider theme={theme}>
     <>
       <SEO />
-      <BaseGrid>
-        <Grid.Unit size={1}>
+      <Container>
+        <HeaderW>
           <Header />
-        </Grid.Unit>
-        <Grid.Unit size={{ tablet: 1, desktop: 1 / 5 }}>
+        </HeaderW>
+        <Navbar>
           <Navigation />
-        </Grid.Unit>
-        <Grid.Unit size={{ tablet: 1, desktop: 4 / 5 }}>
+        </Navbar>
+
+        <Content>
           <div>{children}</div>
-        </Grid.Unit>
-      </BaseGrid>
+        </Content>
+      </Container>
       <GlobalStyle />
     </>
   </ThemeProvider>
