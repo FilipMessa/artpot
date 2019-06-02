@@ -6,56 +6,62 @@ import { graphql } from 'gatsby'
 
 import Text from './Text'
 
-type Fluid = {
-  base64: string,
-  aspectRatio: number,
-  src: string,
-  srcSet: string,
-  sizes: string,
-}
+type Fluid = {|
+  +base64: string,
+  +aspectRatio: number,
+  +src: string,
+  +srcSet: string,
+  +sizes: string,
+|}
 
-type ChildImageSharp = {
-  fluid: Fluid,
-}
+type ChildImageSharp = {|
+  +fluid: Fluid,
+|}
 
-type PosterType = {
-  childImageSharp: ChildImageSharp,
-}
+type PosterType = {|
+  +childImageSharp: ChildImageSharp,
+|}
 
-type Frontmatter = {
-  description: string,
-  poster: PosterType,
-}
+type Props = {|
+  +data: {|
+    +markdownRemark: {|
+      +frontmatter: {|
+        +description: string,
+        +poster: PosterType,
+      |},
+    |},
+  |},
+|}
 
-type MarkdownRemark = {
-  frontmatter: Frontmatter,
-}
-
-type Data = {
-  markdownRemark: MarkdownRemark,
-}
+const Container = styled.div`
+  display: grid;
+  grid-template-areas:
+    'image'
+    'label';
+`
 
 const Image = styled.img`
+  grid-column: -1/1;
+  grid-row: -1/1;
+  grid-area: image;
   max-width: 100%;
   max-height: 100%;
+  object-fit: cover;
+`
+const Label = styled(Text)`
+  grid-area: label;
 `
 
-const Cont = styled.div`
-  width: 100%;
-  height: 100%;
-  max-height: 85vh;
-`
-
-const Poster = ({ data }: { data: Data }) => {
+const Poster = ({ data }: Props) => {
   return (
-    <Cont>
+    <Container>
       <Image
         src={data.markdownRemark.frontmatter.poster.childImageSharp.fluid.src}
       />
-      <Text spaceAfter="large" spaceBefore="small">
+      <Label spaceAfter="large" spaceBefore="small">
         {data.markdownRemark.frontmatter.description}
-      </Text>
-    </Cont>
+      </Label>
+    </Container>
   )
 }
 

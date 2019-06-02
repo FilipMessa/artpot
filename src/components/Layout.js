@@ -10,19 +10,37 @@ import Navigation from './Navigation'
 import theme from '../theme'
 import GlobalStyle from '../theme/GlobalStyles'
 
+type Props = {
+  children: React.Node,
+}
+
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas:
-    'header header'
-    'navbar content';
+    'header header header'
+    'navbar content leftSide';
+
+  padding: ${({ theme }) => theme.layout.padding};
 
   ${media.lessThan('medium')`
+    grid-template-columns: none;
+    grid-template-rows: 1fr;
+
+    grid-gap: 20px;
+
     grid-template-areas:
-    'header header'
-    'navbar navbar';
-    'content content';
+      'header'
+      'navbar'
+      'content';
     `}
+`
+
+const LeftSide = styled.div`
+  grid-area: leftSide;
+  ${media.lessThan('medium')`
+    display: none;
+  `}
 `
 
 const HeaderW = styled.div`
@@ -37,7 +55,7 @@ const Content = styled.div`
   grid-area: content;
 `
 
-const Layout = ({ children }: { children: React.Node }) => (
+const Layout = ({ children }: Props) => (
   <ThemeProvider theme={theme}>
     <>
       <SEO />
@@ -52,6 +70,7 @@ const Layout = ({ children }: { children: React.Node }) => (
         <Content>
           <div>{children}</div>
         </Content>
+        <LeftSide />
       </Container>
       <GlobalStyle />
     </>
