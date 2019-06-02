@@ -16,13 +16,12 @@ type Props = {
 
 const Container = styled.div`
   display: grid;
+  overflow: hidden;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas:
     'header header header'
     'navbar content leftSide';
-
   padding: ${({ theme }) => theme.layout.padding};
-
   ${media.lessThan('medium')`
     grid-template-columns: none;
     grid-template-rows: 1fr;

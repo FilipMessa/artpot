@@ -7,10 +7,13 @@ type Props = {
   children: React$Node,
 }
 
+// @TODO cereate styled components
 const HeadingRenderer = ({ level, children }: Props) => {
   switch (level) {
     case 1:
-      return <h1 style={{ fontWeight: 'bold' }}>{children}</h1>
+      return (
+        <h1 style={{ fontWeight: 'bold', paddingBottom: '5px' }}>{children}</h1>
+      )
     case 2:
       return (
         <h2
@@ -18,6 +21,7 @@ const HeadingRenderer = ({ level, children }: Props) => {
             paddingTop: '1rem',
             lineHeight: '1.2rem',
             fontWeight: 'bold',
+            paddingBottom: '5px',
           }}
         >
           {children}

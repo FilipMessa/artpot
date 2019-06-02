@@ -2,56 +2,45 @@
 
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 import Layout from '../../components/Layout'
+import Gallery from '../../components/Gallery'
 
-type Fluid = {
-  base64: string,
-  aspectRatio: number,
-  src: string,
-  srcSet: string,
-  sizes: string,
-}
+type Default = {|
+  +src: string,
+|}
 
-type ChildImageSharp = {
-  fluid: Fluid,
-}
+type Screen = {|
+  +srcSet: string,
+|}
 
-type Node = {
-  name: string,
-  childImageSharp: ChildImageSharp,
-}
+type ChildImageSharp = {|
+  +desktop: Screen,
+  +mobile: Screen,
+  +default: Default,
+|}
 
-type Edges = {
-  node: Node,
-}
+type Node = {|
+  +id: string,
+  +name: string,
+  +childImageSharp: ChildImageSharp,
+|}
 
-type Works = {
-  edges: Edges[],
-}
-
-type Data = {
-  works: Works,
-}
-
-type Props = {
-  data: Data,
-}
+type Props = {|
+  data: {|
+    +works: {|
+      +edges: $ReadOnlyArray<{|
+        +node: Node,
+      |}>,
+    |},
+  |},
+|}
 
 const IndexPage = ({ data }: Props) => {
   const nodes = data.works.edges.map(({ node }) => node)
   return (
     <Layout>
-      <h1>Works Page</h1>
-      <div style={{ margin: '2rem' }}>
-        {nodes.map(node => (
-          <Img
-            key={node.childImageSharp.fluid.base64}
-            fluid={node.childImageSharp.fluid}
-          />
-        ))}
-      </div>
+      <Gallery images={nodes} />
     </Layout>
   )
 }
@@ -63,10 +52,17 @@ export const pageQuery = graphql`
     works: allFile(filter: { sourceInstanceName: { eq: "works" } }) {
       edges {
         node {
+          id
           name
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+            desktop: fixed(height: 230) {
+              ...GatsbyImageSharpFixed
+            }
+            mobile: fixed(width: 768) {
+              ...GatsbyImageSharpFixed
+            }
+            default: fixed(width: 500) {
+              src
             }
           }
         }

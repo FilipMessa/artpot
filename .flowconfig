@@ -14,6 +14,12 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
 suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpected
 
+server.max_workers=4
+
+
+module.name_mapper='^@theme' ->'<PROJECT_ROOT>/src/theme'
+
+
 [strict]
 
 [version]

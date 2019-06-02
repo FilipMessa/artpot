@@ -1,5 +1,18 @@
 // @flow
 
+import { generateMedia } from 'styled-media-query'
+
+// MediaQueries -> TODO workspace
+export const breakPoints = {
+  huge: '1440px',
+  large: '1170px',
+  medium: '768px',
+  small: '450px',
+}
+
+export const media = generateMedia(breakPoints)
+
+// Theme
 const typography = {
   defaultSize: '14px',
   fontSizes: {

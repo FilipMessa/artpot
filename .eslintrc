@@ -24,5 +24,10 @@
         "annotationStyle": "line"
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": [["@theme", "./src/theme"]]
+    }
   }
 }

@@ -6,37 +6,36 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Poster from '../components/Poster'
 
-type Fluid = {
-  base64: string,
-  aspectRatio: number,
-  src: string,
-  srcSet: string,
-  sizes: string,
-}
+type Fluid = {|
+  +base64: string,
+  +aspectRatio: number,
+  +src: string,
+  +srcSet: string,
+  +sizes: string,
+|}
 
-type ChildImageSharp = {
-  fluid: Fluid,
-}
+type ChildImageSharp = {|
+  +fluid: Fluid,
+|}
 
-type PosterType = {
-  childImageSharp: ChildImageSharp,
-}
+type PosterType = {|
+  +childImageSharp: ChildImageSharp,
+|}
 
-type Frontmatter = {
-  description: string,
-  poster: PosterType,
-}
+type Frontmatter = {|
+  +description: string,
+  +poster: PosterType,
+|}
 
-type MarkdownRemark = {
-  frontmatter: Frontmatter,
-}
+type MarkdownRemark = {|
+  +frontmatter: Frontmatter,
+|}
 
-type Data = {
-  markdownRemark: MarkdownRemark,
-}
+type Data = {|
+  +markdownRemark: MarkdownRemark,
+|}
 
 const IndexPage = ({ data }: { data: Data }) => {
-  console.log(JSON.stringify(data), data)
   return (
     <Layout>
       <Poster data={data} />
