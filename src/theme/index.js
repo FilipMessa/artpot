@@ -48,6 +48,11 @@ const poster = {
   },
 }
 
+const imageLoader = {
+  color: '#A9A9A9',
+  size: 65,
+}
+
 const theme = {
   typography,
   colors: {
@@ -60,6 +65,7 @@ const theme = {
   components: {
     poster,
     navigation,
+    imageLoader,
   },
 }
 

@@ -12,6 +12,7 @@ type Default = {|
 
 type Screen = {|
   +srcSet: string,
+  +height: number,
 |}
 
 type ChildImageSharp = {|

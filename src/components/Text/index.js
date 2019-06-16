@@ -34,11 +34,12 @@ type Props = {|
   +align?: 'left' | 'center' | 'right' | 'justify',
   +spaceAfter?: 'small' | 'medium' | 'large',
   +spaceBefore?: 'small' | 'medium' | 'large',
+  +className?: string,
 |}
 
-const StyledText = styled(({ element: TextElement, children, className }) => (
-  <TextElement className={className}>{children}</TextElement>
-))`
+const StyledText = styled(({ element: TextElement, children, className }) => {
+  return <TextElement className={className}>{children}</TextElement>
+})`
   color: ${getColorByType()};
   font-size: ${getFontSizes()};
   text-align: ${({ align }) => align};
@@ -61,9 +62,11 @@ const Text = ({
   align = 'left',
   spaceAfter,
   spaceBefore,
+  className,
 }: Props) => {
   return (
     <StyledText
+      className={className}
       element={element}
       size={size}
       spaceAfter={spaceAfter}
