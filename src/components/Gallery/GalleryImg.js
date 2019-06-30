@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react'
 import styled from 'styled-components'
-import { media, breakPoints } from '@theme'
 import LazyLoad from 'react-lazyload'
+import { media, breakPoints } from '@theme'
 
 import getWindowWidth from '../../utils/getWindowWidth'
 import ImgLoader from './ImgLoader'
