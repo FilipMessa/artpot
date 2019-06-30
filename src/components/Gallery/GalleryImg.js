@@ -102,10 +102,7 @@ const GalleryImg = ({ label, data }: Props) => {
 
           <img
             src={data.default.src}
-            alt={() => {
-              // @TODO get from data
-              return 'gallery image'
-            }}
+            alt={label}
           />
         </Picture>
         {label && <Label spaceBefore="small">{label}</Label>}
