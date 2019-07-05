@@ -2,7 +2,7 @@
 
 import { generateMedia } from 'styled-media-query'
 
-// MediaQueries -> TODO workspace
+// MediaQueries
 export const breakPoints = {
   huge: '1440px',
   large: '1170px',
@@ -53,12 +53,21 @@ const imageLoader = {
   size: 65,
 }
 
+const colors = {
+  black: '#030303',
+  nobel: '#B5B5B5',
+}
+
+const modal = {
+  overlayColor: 'rgba(0,0,0,0.5)',
+}
+
+const zIndex = [10, 20, 30, 40, 50]
+
 const theme = {
   typography,
-  colors: {
-    black: '#030303',
-    nobel: '#B5B5B5',
-  },
+  zIndex,
+  colors,
   layout: {
     padding: '1.063em',
   },
@@ -66,6 +75,7 @@ const theme = {
     poster,
     navigation,
     imageLoader,
+    modal,
   },
 }
 

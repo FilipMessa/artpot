@@ -9,6 +9,7 @@ import Navigation from './Navigation'
 
 import theme from '../theme'
 import GlobalStyle from '../theme/GlobalStyles'
+import { ModalRoot } from './Modal'
 
 type Props = {
   children: React.Node,
@@ -65,13 +66,13 @@ const Layout = ({ children }: Props) => (
         <Navbar>
           <Navigation />
         </Navbar>
-
         <Content>
           <div>{children}</div>
         </Content>
         <LeftSide />
       </Container>
       <GlobalStyle />
+      <ModalRoot />
     </>
   </ThemeProvider>
 )
