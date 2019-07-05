@@ -6,9 +6,6 @@ import styled from 'styled-components'
 export { default as ModalRoot } from './ModalRoot'
 export { default as useModal } from './useModal'
 
-// @TODO Prevent Page Scrolling When a Modal is Open
-// background-color: from theme
-
 const Overlay = styled.div`
   z-index: ${({ theme }) => theme.zIndex[3]};
   position: fixed;
