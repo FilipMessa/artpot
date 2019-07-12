@@ -8,6 +8,7 @@
 [lints]
 
 [options]
+esproposal.optional_chaining=enable
 emoji=true
 suppress_comment=\\(.\\|\n\\)*\\$FlowTest
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe

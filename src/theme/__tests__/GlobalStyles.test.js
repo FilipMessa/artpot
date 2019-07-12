@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { render } from 'react-testing-library'
+import { render } from '@testing-library/react'
 import theme from '../index'
 
 import GlobalStyles from '../GlobalStyles'
