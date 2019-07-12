@@ -59,7 +59,7 @@ const colors = {
 }
 
 const modal = {
-  overlayColor: 'rgba(0,0,0,0.5)',
+  overlayColor: 'rgba(0,0,0,0.75)',
 }
 
 const zIndex = [10, 20, 30, 40, 50]

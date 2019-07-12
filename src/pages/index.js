@@ -5,7 +5,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Poster from '../components/Poster'
-import Modal, { useModal } from '../components/Modal'
 
 type Fluid = {|
   +base64: string,
@@ -37,27 +36,9 @@ type Data = {|
 |}
 
 const IndexPage = ({ data }: { data: Data }) => {
-  const { isShowing, toggle } = useModal()
   return (
     <Layout>
       <Poster data={data} />
-      <button onClick={toggle} type="button">
-        Modal open
-      </button>
-      <Modal isShowing={isShowing} onClose={toggle}>
-        <div
-          style={{
-            width: 250,
-            height: 250,
-            backgroundColor: 'white',
-            justifyContent: 'center',
-            alignItems: 'center',
-            display: 'flex',
-          }}
-        >
-          MODAL TEST
-        </div>
-      </Modal>
     </Layout>
   )
 }

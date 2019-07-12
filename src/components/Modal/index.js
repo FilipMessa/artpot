@@ -20,12 +20,12 @@ const Overlay = styled.div`
 `
 
 type Props = {
-  isShowing: boolean,
+  isVisible: boolean,
   onClose: () => void,
   children: React.Node,
 }
 
-const Modal = ({ isShowing, onClose, children }: Props) => {
+const Modal = ({ isVisible, onClose, children }: Props) => {
   const modalRoot = document.getElementById('modal-root')
   const node = React.useRef<Element | null>(null)
 
@@ -38,7 +38,7 @@ const Modal = ({ isShowing, onClose, children }: Props) => {
     onClose()
   }
 
-  return isShowing && modalRoot
+  return isVisible && modalRoot
     ? ReactDOM.createPortal(
         <>
           <Overlay onClick={handleClick}>

@@ -65,6 +65,7 @@ const Poster = ({ data }: Props) => {
   )
 }
 
+// TODO should I need GatsbyImage fragment?
 export const query = graphql`
   fragment SiteInformation on Query {
     markdownRemark(frontmatter: { slug: { eq: "/" } }) {

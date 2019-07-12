@@ -46,7 +46,7 @@ const Label = styled(Text)`
       top: calc(50% - 0.9em);
       margin: 0 auto;
       text-align: center;
-      padding: 0 1rem; 
+      padding: 0 1rem;
     `}
 `
 
@@ -79,12 +79,16 @@ type Props = {
   +data: GalleryImgType,
 }
 
-const GalleryImg = ({ label, data }: Props) => {
+const GalleryImg = ({ label, data, onClick, img }: Props) => {
   const imgHeight =
     getWindowWidth() > 768 ? data.desktop.height : data.mobile.height
 
+  const handleClick = () => {
+    onClick(img)
+  }
+
   return (
-    <Container>
+    <Container onClick={handleClick}>
       <LazyLoad
         placeholder={<ImgLoader height={imgHeight} />}
         offset={lazyLoading.offset}
@@ -100,10 +104,7 @@ const GalleryImg = ({ label, data }: Props) => {
             srcSet={data.desktop.srcSet}
           />
 
-          <img
-            src={data.default.src}
-            alt={label}
-          />
+          <img src={data.default.src} alt={label} />
         </Picture>
         {label && <Label spaceBefore="small">{label}</Label>}
       </LazyLoad>

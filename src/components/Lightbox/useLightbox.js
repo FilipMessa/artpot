@@ -1,20 +1,28 @@
 // @flow
+
 import { useState } from 'react'
 
-const useModal = () => {
+const useLightbox = () => {
   const [isVisible, setVisibility] = useState(false)
+  const [selectedImg, settImg] = useState(null)
 
-  function toggle() {
+  function toggleLightbox() {
     if (document.body) {
       document.body.style.overflow = isVisible ? 'unset' : 'hidden'
     }
     setVisibility(!isVisible)
   }
 
+  function selectImg(img) {
+    settImg(img)
+  }
+
   return {
     isVisible,
-    toggle,
+    toggleLightbox,
+    selectedImg,
+    selectImg,
   }
 }
 
-export default useModal
+export default useLightbox
