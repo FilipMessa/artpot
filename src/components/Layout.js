@@ -10,6 +10,7 @@ import Navigation from './Navigation'
 import theme from '../theme'
 import GlobalStyle from '../theme/GlobalStyles'
 import { ModalRoot } from './Modal'
+import { ModalProvider } from './Modal/ModalProvider'
 
 type Props = {
   children: React.Node,
@@ -56,25 +57,27 @@ const Content = styled.div`
 `
 
 const Layout = ({ children }: Props) => (
-  <ThemeProvider theme={theme}>
-    <>
-      <SEO />
-      <Container>
-        <HeaderW>
-          <Header />
-        </HeaderW>
-        <Navbar>
-          <Navigation />
-        </Navbar>
-        <Content>
-          <div>{children}</div>
-        </Content>
-        <LeftSide />
-      </Container>
-      <GlobalStyle />
-      <ModalRoot />
-    </>
-  </ThemeProvider>
+  <ModalProvider>
+    <ThemeProvider theme={theme}>
+      <>
+        <SEO />
+        <Container>
+          <HeaderW>
+            <Header />
+          </HeaderW>
+          <Navbar>
+            <Navigation />
+          </Navbar>
+          <Content>
+            <div>{children}</div>
+          </Content>
+          <LeftSide />
+        </Container>
+        <GlobalStyle />
+        <ModalRoot />
+      </>
+    </ThemeProvider>
+  </ModalProvider>
 )
 
 export default Layout
