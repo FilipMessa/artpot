@@ -70,8 +70,13 @@ const Modal = ({ onClose, children }: Props) => {
   return modalRoot && isOpen
     ? ReactDOM.createPortal(
         <>
-          <Overlay isOpen={isOpen} onClick={handleClickOutside}>
+          <Overlay
+            isOpen={isOpen}
+            onClick={handleClickOutside}
+            onKeyDown={onEscKeyDown}
+          >
             <div
+              role="dialog"
               ref={node}
               style={{
                 display: 'flex',
@@ -79,10 +84,11 @@ const Modal = ({ onClose, children }: Props) => {
                 justifyContent: 'center',
               }}
               tabIndex="-1"
-              onKeyDown={onEscKeyDown}
             >
               <div>
-                <button onClick={toggleFullscreen}>fullscreen X</button>
+                <button type="button" onClick={toggleFullscreen}>
+                  fullscreen X
+                </button>
                 {children}
               </div>
             </div>
