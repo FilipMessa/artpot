@@ -1,19 +1,18 @@
-/* eslint-disable import/prefer-default-export */
 // @flow
 
 import React from 'react'
+import { MODAL_STATES } from './consts'
 
-const defaultState = null
-
-type State = 'isOpen' | 'isClose'
+type State = $Values<typeof MODAL_STATES>
 
 export const ModalContext = React.createContext<{
-  +state: ?State,
+  +modalState: ?State,
   +actions: {
-    +toggle: () => void,
+    +handleOpen: () => void,
+    +handleClose: () => void,
   },
 }>({
-  state: defaultState,
+  modalState: MODAL_STATES.CLOSE,
   actions: {
     handleOpen: () => {},
     handleClose: () => {},

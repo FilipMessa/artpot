@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { ModalContext } from './ModalContext'
+import { MODAL_STATES } from './consts'
 
 function switchBodyScroll(state) {
   if (document.body) {
@@ -12,17 +13,18 @@ function switchBodyScroll(state) {
 export function ModalProvider({ children }: { children: ?React.Node }) {
   const [modalState, setModalState] = React.useState('isClose')
 
+  const handleState = (type: $Values<typeof MODAL_STATES>) => () => {
+    const bodyScorllState = MODAL_STATES.OPEN === type ? 'hidden' : 'unset'
+
+    switchBodyScroll(bodyScorllState)
+    setModalState(type)
+  }
+
   const state = {
-    state: modalState,
+    modalState,
     actions: {
-      handleClose: () => {
-        switchBodyScroll('unset')
-        setModalState('isClose')
-      },
-      handleOpen: () => {
-        switchBodyScroll('hidden')
-        setModalState('isOpen')
-      },
+      handleClose: handleState(MODAL_STATES.CLOSE),
+      handleOpen: handleState(MODAL_STATES.OPEN),
     },
   }
 

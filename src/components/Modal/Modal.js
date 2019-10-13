@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import { useFullScreen } from 'react-browser-hooks'
 import { ModalContext } from './ModalContext'
+import { KEY_CODES } from '../../consts'
 
 const Overlay = styled.div`
   z-index: ${({ theme }) => theme.zIndex[3]};
@@ -22,58 +23,75 @@ const Overlay = styled.div`
 }
 `
 
+const Content = styled.div`
+  &:hover {
+    cursor: ${({ isFullscreen }) => (isFullscreen ? 'zoom-out' : 'zoom-in')};
+  }
+`
+
 type Props = {
   onClose?: () => void,
   children: React.Node,
 }
 
 const Modal = ({ onClose, children }: Props) => {
+  const [isFullscreen, setScreenState] = React.useState(false)
   const modalRoot = document.getElementById('modal-root')
-  const node = React.useRef<Element | null>(null)
+  // @TODO add right flow-type
+  const node = React.useRef<any>(null)
+
+  const {
+    modalState,
+    actions: { handleClose },
+  } = React.useContext(ModalContext)
+
+  const isOpen = modalState === 'isOpen'
+
+  React.useEffect(() => {
+    if (isOpen) {
+      node && node.current.focus()
+    }
+  }, [isOpen])
+
   const { toggle: toggleFullscreen } = useFullScreen({
     element: node,
   })
-
-  const {
-    state: modalState,
-    actions: { handleClose },
-  } = React.useContext(ModalContext)
 
   const handleCloseModal = () => {
     onClose && onClose()
     handleClose()
   }
 
-  const handleClickOutside = e => {
+  const handleToggleFullscreen = () => {
+    setScreenState(!isFullscreen)
+    toggleFullscreen()
+  }
+
+  const handleOverlayClick = e => {
     if (node.current && node.current.contains(e.target)) {
-      // inside click
-      return
+      // handle click Inside
+      return handleToggleFullscreen()
     }
     // outside click
     handleCloseModal()
   }
 
-  const onEscKeyDown = event => {
-    if (event.keyCode === 27) {
-      handleCloseModal()
+  const handleOnKeyDown = ({ keyCode }) => {
+    switch (keyCode) {
+      case KEY_CODES.ESC:
+        return handleCloseModal()
+      default:
+        return null
     }
   }
-
-  const isOpen = modalState === 'isOpen'
-
-  React.useEffect(() => {
-    if (isOpen) {
-      node.current.focus()
-    }
-  }, [isOpen])
 
   return modalRoot && isOpen
     ? ReactDOM.createPortal(
         <>
           <Overlay
             isOpen={isOpen}
-            onClick={handleClickOutside}
-            onKeyDown={onEscKeyDown}
+            onClick={handleOverlayClick}
+            onKeyDown={handleOnKeyDown}
           >
             <div
               role="dialog"
@@ -85,12 +103,7 @@ const Modal = ({ onClose, children }: Props) => {
               }}
               tabIndex="-1"
             >
-              <div>
-                <button type="button" onClick={toggleFullscreen}>
-                  fullscreen X
-                </button>
-                {children}
-              </div>
+              <Content isFullscreen={isFullscreen}>{children}</Content>
             </div>
           </Overlay>
         </>,
