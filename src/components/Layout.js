@@ -2,15 +2,10 @@
 import * as React from 'react'
 import media from 'styled-media-query'
 
-import styled, { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 import SEO from './SEO'
 import Header from './Header'
 import Navigation from './Navigation'
-
-import theme from '../theme'
-import GlobalStyle from '../theme/GlobalStyles'
-import { ModalRoot } from './Modal'
-import { ModalProvider } from './Modal/ModalProvider'
 
 type Props = {
   children: React.Node,
@@ -57,27 +52,21 @@ const Content = styled.div`
 `
 
 const Layout = ({ children }: Props) => (
-  <ModalProvider>
-    <ThemeProvider theme={theme}>
-      <>
-        <SEO />
-        <Container>
-          <HeaderW>
-            <Header />
-          </HeaderW>
-          <Navbar>
-            <Navigation />
-          </Navbar>
-          <Content>
-            <div>{children}</div>
-          </Content>
-          <LeftSide />
-        </Container>
-        <GlobalStyle />
-        <ModalRoot />
-      </>
-    </ThemeProvider>
-  </ModalProvider>
+  <>
+    <SEO />
+    <Container>
+      <HeaderW>
+        <Header />
+      </HeaderW>
+      <Navbar>
+        <Navigation />
+      </Navbar>
+      <Content>
+        <div>{children}</div>
+      </Content>
+      <LeftSide />
+    </Container>
+  </>
 )
 
 export default Layout

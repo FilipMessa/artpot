@@ -1,7 +1,19 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+/* eslint-disable import/prefer-default-export */
+// @flow
 
-// You can delete this file if you're not using it// @flow
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import theme from './src/theme'
+import GlobalStyle from './src/theme/GlobalStyles'
+import { ModalProvider } from './src/components/Modal/ModalProvider'
+import { ModalRoot } from './src/components/Modal'
+
+export function wrapRootElement({ element }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <ModalProvider>{element}</ModalProvider>
+      <ModalRoot />
+      <GlobalStyle />
+    </ThemeProvider>
+  )
+}
