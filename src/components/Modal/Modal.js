@@ -18,9 +18,9 @@ const Overlay = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.components.modal.overlayColor};
 
-   > div:focus{
-    outline: none;}
-}
+  > div:focus {
+    outline: none;
+  }
 `
 
 const Content = styled.div`

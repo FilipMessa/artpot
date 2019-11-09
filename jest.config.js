@@ -31,7 +31,6 @@ module.exports = {
   setupFiles: ['<rootDir>/loadershim.js'],
   setupFilesAfterEnv: [
     'jest-styled-components',
-    '@testing-library/react/cleanup-after-each',
     '@testing-library/jest-dom/extend-expect',
   ],
 }
