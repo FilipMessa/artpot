@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Poster from '../components/Poster'
 import { Modal } from '../components/Modal'
+import { Lightbox } from '../components/Lightbox'
 import TestButton from './TestButton'
 
 type Fluid = {|
@@ -43,18 +44,20 @@ const IndexPage = ({ data }: { data: Data }) => {
       <Poster data={data} />
       <TestButton />
       <Modal>
-        <div
-          style={{
-            width: 250,
-            height: 250,
-            backgroundColor: 'white',
-            justifyContent: 'center',
-            alignItems: 'center',
-            display: 'flex',
-          }}
-        >
-          MODAL TEST
-        </div>
+        <Lightbox>
+          <div
+            style={{
+              width: 250,
+              height: 250,
+              backgroundColor: 'white',
+              justifyContent: 'center',
+              alignItems: 'center',
+              display: 'flex',
+            }}
+          >
+            MODAL TEST
+          </div>
+        </Lightbox>
       </Modal>
     </Layout>
   )
