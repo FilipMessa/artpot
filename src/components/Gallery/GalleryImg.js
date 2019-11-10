@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import LazyLoad from 'react-lazyload'
 import { media, breakPoints } from '@theme'
 
-import getWindowWidth from '../../utils/getWindowWidth'
+import { isMobile } from '../../utils'
 import ImgLoader from './ImgLoader'
 import { lazyLoading } from '../../configs'
 import Text from '../Text'
@@ -82,8 +82,7 @@ type Props = {|
 |}
 
 const GalleryImg = ({ label, data, onClick, index }: Props) => {
-  const imgHeight =
-    getWindowWidth() > 768 ? data.desktop.height : data.mobile.height
+  const imgHeight = isMobile() ? data.mobile.height : data.desktop.height
 
   const handleClick = React.useCallback(() => onClick(index), [index, onClick])
 

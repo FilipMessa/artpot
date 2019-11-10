@@ -5,6 +5,7 @@ import Carousel, { Modal, ModalGateway } from 'react-images'
 import { media } from '@theme'
 
 import GalleryImage, { type GalleryImgType } from './GalleryImg'
+import { isMobile } from '../../utils'
 
 const Container = styled.div`
   display: flex;
@@ -55,13 +56,15 @@ const Gallery = ({ images }: Props) => {
         ))}
       </Container>
 
-      <ModalGateway>
-        {modalIsOpen ? (
-          <Modal onClose={toggleLightbox}>
-            {<Carousel views={lightImgs} currentIndex={selectedIndex} />}
-          </Modal>
-        ) : null}
-      </ModalGateway>
+      {!isMobile() && (
+        <ModalGateway>
+          {modalIsOpen ? (
+            <Modal onClose={toggleLightbox}>
+              {<Carousel views={lightImgs} currentIndex={selectedIndex} />}
+            </Modal>
+          ) : null}
+        </ModalGateway>
+      )}
     </>
   )
 }
