@@ -56,6 +56,9 @@ export const pageQuery = graphql`
           id
           name
           childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_noBase64
+            }
             desktop: fixed(height: 230) {
               ...GatsbyImageSharpFixed
             }
