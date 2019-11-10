@@ -112,4 +112,22 @@ const GalleryImg = ({ label, data, onClick, index }: Props) => {
   )
 }
 
+export const query = graphql`
+  fragment GalleryImg on File {
+    id
+    name
+    childImageSharp {
+      desktop: fixed(height: 230) {
+        ...GatsbyImageSharpFixed
+      }
+      mobile: fixed(width: 768) {
+        ...GatsbyImageSharpFixed
+      }
+      default: fixed(width: 500) {
+        src
+      }
+    }
+  }
+`
+
 export default GalleryImg

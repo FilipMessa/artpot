@@ -7,5 +7,5 @@ export const LogoConfig = {
 }
 
 export const lazyLoading = {
-  offset: 150,
+  offset: 200,
 }

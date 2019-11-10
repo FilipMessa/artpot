@@ -40,7 +40,6 @@ const Gallery = ({ images }: Props) => {
   }
 
   const lightImgs = images.map(getImagesSrc)
-  console.log({ lightImgs })
 
   return (
     <>
@@ -55,6 +54,7 @@ const Gallery = ({ images }: Props) => {
           />
         ))}
       </Container>
+
       <ModalGateway>
         {modalIsOpen ? (
           <Modal onClose={toggleLightbox}>

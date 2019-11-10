@@ -53,22 +53,7 @@ export const pageQuery = graphql`
     works: allFile(filter: { sourceInstanceName: { eq: "works" } }) {
       edges {
         node {
-          id
-          name
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-            desktop: fixed(height: 230) {
-              ...GatsbyImageSharpFixed
-            }
-            mobile: fixed(width: 768) {
-              ...GatsbyImageSharpFixed
-            }
-            default: fixed(width: 500) {
-              src
-            }
-          }
+          ...GalleryImg
         }
       }
     }
