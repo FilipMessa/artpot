@@ -1,7 +1,7 @@
 import * as React from 'react'
 import PropType from 'prop-types'
 
-// @TODO cereate styled components
+// @TODO create styled components for heading (design tokens)
 const HeadingRenderer = ({ level, children }) => {
   switch (level) {
     case 1:

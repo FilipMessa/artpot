@@ -20,7 +20,8 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/require-default-props": 0,
     "no-shadow": ["error", { "allow": ["theme"] }],
-    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }]
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+    "react/forbid-prop-types": 0
   },
   "settings": {
     "import/resolver": {

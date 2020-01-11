@@ -22,8 +22,6 @@ const InfoPage = ({ data }) => {
 }
 
 InfoPage.propTypes = {
-  // TODO
-  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object,
 }
 

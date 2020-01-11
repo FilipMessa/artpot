@@ -31,6 +31,10 @@ const typography = {
     medium: '0.888rem',
     large: '1.333rem',
   },
+  fontWeight: {
+    normal: 'normal',
+    bold: 'bold',
+  },
 }
 
 const navigation = {
@@ -42,7 +46,7 @@ const navigation = {
 
 const poster = {
   label: {
-    fontSize: '0.781rem',
+    fontSize: typography.fontSizes.small,
   },
 }
 
@@ -62,6 +66,30 @@ const modal = {
 
 const zIndex = [10, 20, 30, 40, 50]
 
+export const getHeadingTokens = () => {
+  const common = {
+    paddingBottom: '5px',
+  }
+  return {
+    heading: {
+      h1: {
+        fontWeight: 'bold',
+        ...common,
+      },
+      h2: {
+        paddingTop: '1rem',
+        lineHeight: '1.2rem',
+        fontWeight: typography.fontWeight.bold,
+        ...common,
+      },
+      h3: {},
+      h4: {},
+      h5: {},
+      h6: {},
+    },
+  }
+}
+
 const theme = {
   typography,
   zIndex,
@@ -69,6 +97,7 @@ const theme = {
   layout: {
     padding: '1.063em',
   },
+  ...getHeadingTokens(),
   components: {
     poster,
     navigation,
