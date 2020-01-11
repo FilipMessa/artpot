@@ -60,7 +60,7 @@ const Gallery = ({ images }: Props) => {
         <ModalGateway>
           {modalIsOpen ? (
             <Modal onClose={toggleLightbox}>
-              {<Carousel views={lightImgs} currentIndex={selectedIndex} />}
+              <Carousel views={lightImgs} currentIndex={selectedIndex} />
             </Modal>
           ) : null}
         </ModalGateway>

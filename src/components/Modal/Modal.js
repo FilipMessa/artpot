@@ -70,10 +70,11 @@ const Modal = ({ onClose, children }: Props) => {
   const handleOverlayClick = e => {
     if (node.current && node.current.contains(e.target)) {
       // handle click Inside
-      return handleToggleFullscreen()
-    }
+       handleToggleFullscreen()
+    } else {
     // outside click
     handleCloseModal()
+    }
   }
 
   const handleOnKeyDown = ({ keyCode }) => {

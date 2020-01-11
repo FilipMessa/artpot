@@ -2,6 +2,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import LazyLoad from 'react-lazyload'
+import { graphql } from 'gatsby'
 import { media, breakPoints } from '@theme'
 
 import { isMobile } from '../../utils'

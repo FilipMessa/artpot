@@ -5,8 +5,7 @@ import { ModalContext } from '../components/Modal/ModalContext'
 export default () => {
   const {
     actions: { handleOpen },
-    state,
   } = React.useContext(ModalContext)
 
-  return <button onClick={handleOpen}>Open Kuzvaaa!</button>
+  return <button type="button" onClick={handleOpen}>Open Kuzvaaa!</button>
 }

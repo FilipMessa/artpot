@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types';
 import { DIRECTION_TYPES } from './consts'
 import { NextItem } from './NextItem'
 
@@ -19,12 +20,12 @@ const Content = styled.div`
 export function Lightbox({ children }) {
   const handleLeftClick = e => {
     e.stopPropagation()
-    console.log('LEFT')
+    console.log('LEFT') // TODO in progress
   }
 
   const handleRightClick = e => {
     e.stopPropagation()
-    console.log('RIGHT')
+    console.log('RIGHT') // TODO in progress
   }
 
   return (
@@ -34,4 +35,8 @@ export function Lightbox({ children }) {
       <NextItem type={DIRECTION_TYPES.RIGHT} onClick={handleRightClick} />
     </Container>
   )
+}
+
+Lightbox.propTypes = {
+  children: PropTypes.element
 }

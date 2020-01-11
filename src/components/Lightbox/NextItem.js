@@ -3,7 +3,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
+import PropTypes from 'prop-types';
 import { DIRECTION_TYPES } from './consts'
+
 
 function getDirection(type) {
   switch (type) {
@@ -49,4 +51,9 @@ export function NextItem({ type = DIRECTION_TYPES.LEFT, onClick }) {
       {getDirection(type)}
     </NextItemContainer>
   )
+}
+
+NextItem.propTypes={
+  type: PropTypes.oneOf(['left', 'right']),
+  onClick: PropTypes.func.isRequired,
 }

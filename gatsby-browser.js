@@ -3,6 +3,7 @@
 
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import PropTypes from 'prop-types';
 import theme from './src/theme'
 import GlobalStyle from './src/theme/GlobalStyles'
 import { ModalProvider } from './src/components/Modal/ModalProvider'
@@ -16,4 +17,9 @@ export function wrapRootElement({ element }) {
       <GlobalStyle />
     </ThemeProvider>
   )
+}
+
+
+wrapRootElement.propTypes = {
+  element: PropTypes.element
 }
