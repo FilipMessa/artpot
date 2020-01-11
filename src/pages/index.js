@@ -1,44 +1,16 @@
-// @flow
+//
 
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
+import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import Poster from '../components/Poster'
 import { Modal } from '../components/Modal'
 import { Lightbox } from '../components/Lightbox'
 import TestButton from './TestButton'
 
-type Fluid = {|
-  +base64: string,
-  +aspectRatio: number,
-  +src: string,
-  +srcSet: string,
-  +sizes: string,
-|}
-
-type ChildImageSharp = {|
-  +fluid: Fluid,
-|}
-
-type PosterType = {|
-  +childImageSharp: ChildImageSharp,
-|}
-
-type Frontmatter = {|
-  +description: string,
-  +poster: PosterType,
-|}
-
-type MarkdownRemark = {|
-  +frontmatter: Frontmatter,
-|}
-
-type Data = {|
-  +markdownRemark: MarkdownRemark,
-|}
-
-const IndexPage = ({ data }: { data: Data }) => {
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Poster data={data} />
@@ -61,6 +33,12 @@ const IndexPage = ({ data }: { data: Data }) => {
       </Modal>
     </Layout>
   )
+}
+
+IndexPage.propTypes = {
+  // TODO
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object,
 }
 
 export default IndexPage

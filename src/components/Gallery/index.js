@@ -1,10 +1,10 @@
-// @flow
 import * as React from 'react'
 import styled from 'styled-components'
 import Carousel, { Modal, ModalGateway } from 'react-images'
+import PropTypes from 'prop-types'
 import { media } from '@theme'
+import GalleryImage from './GalleryImg'
 
-import GalleryImage, { type GalleryImgType } from './GalleryImg'
 import { isMobile } from '../../utils'
 
 const Container = styled.div`
@@ -15,19 +15,11 @@ const Container = styled.div`
   `}
 `
 
-type Props = {|
-  +images: Array<{|
-    +name: string,
-    +id: string,
-    +childImageSharp: GalleryImgType,
-  |}>,
-|}
-
-const Gallery = ({ images }: Props) => {
+const Gallery = ({ images }) => {
   const [modalIsOpen, setModalState] = React.useState(false)
   const [selectedIndex, setIndex] = React.useState(0)
 
-  const toggleLightbox = (index: number) => {
+  const toggleLightbox = index => {
     setModalState(!modalIsOpen)
     setIndex(index)
   }
@@ -67,6 +59,9 @@ const Gallery = ({ images }: Props) => {
       )}
     </>
   )
+}
+Gallery.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.element),
 }
 
 export default Gallery

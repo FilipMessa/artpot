@@ -1,6 +1,5 @@
 {
   "presets": [
-    "@babel/preset-flow",
     [
       "@babel/preset-env",
       {
@@ -23,7 +22,6 @@
     ]
   ],
   "plugins": [
-    "flow-react-proptypes",
     [
       "@babel/plugin-proposal-class-properties",
       {

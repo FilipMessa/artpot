@@ -1,37 +1,9 @@
-// @flow
-
 import * as React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
 import Text from './Text'
-
-type Fluid = {|
-  +base64: string,
-  +aspectRatio: number,
-  +src: string,
-  +srcSet: string,
-  +sizes: string,
-|}
-
-type ChildImageSharp = {|
-  +fluid: Fluid,
-|}
-
-type PosterType = {|
-  +childImageSharp: ChildImageSharp,
-|}
-
-type Props = {|
-  +data: {|
-    +markdownRemark: {|
-      +frontmatter: {|
-        +description: string,
-        +poster: PosterType,
-      |},
-    |},
-  |},
-|}
 
 const Container = styled.div`
   display: grid;
@@ -52,7 +24,7 @@ const Label = styled(Text)`
   grid-area: label;
 `
 
-const Poster = ({ data }: Props) => {
+const Poster = ({ data }) => {
   return (
     <Container>
       <Image
@@ -63,6 +35,12 @@ const Poster = ({ data }: Props) => {
       </Label>
     </Container>
   )
+}
+
+Poster.propTypes = {
+  // TODO
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object,
 }
 
 export const query = graphql`

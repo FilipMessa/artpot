@@ -1,16 +1,10 @@
-// @flow
-
 import * as React from 'react'
 import Truncate from 'react-truncate'
+import PropTypes from 'prop-types'
 import Text from '../Text'
 import Button from './components/Button'
 
-type Props = {|
-  +text: string,
-  +lines?: number,
-|}
-
-const ReadMore = ({ text, lines = 3 }: Props) => {
+const ReadMore = ({ text, lines = 3 }) => {
   const [isExpanded, setExpanded] = React.useState(false)
   const toggleLines = () => setExpanded(!isExpanded)
 
@@ -31,6 +25,11 @@ const ReadMore = ({ text, lines = 3 }: Props) => {
       {isExpanded && <Button text="(read less)" onClick={toggleLines} />}
     </>
   )
+}
+
+ReadMore.propTypes = {
+  text: PropTypes.string.isRequired,
+  lines: PropTypes.number,
 }
 
 export default ReadMore

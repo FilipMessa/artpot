@@ -1,4 +1,4 @@
-// @flow
+
 module.exports = {
   siteMetadata: {
     title: 'Artpot',
@@ -78,7 +78,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-netlify-cms',
-    'gatsby-plugin-flow',
     {
       resolve: 'gatsby-plugin-eslint',
       options: {

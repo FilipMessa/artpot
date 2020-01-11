@@ -1,8 +1,8 @@
-// @flow
 import * as React from 'react'
 import styled from 'styled-components'
 import LazyLoad from 'react-lazyload'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 import { media, breakPoints } from '@theme'
 
 import { isMobile } from '../../utils'
@@ -61,28 +61,7 @@ const Picture = styled.picture`
   }
 `
 
-export type GalleryImgType = {|
-  +mobile: {|
-    +srcSet: string,
-    +height: number,
-  |},
-  +desktop: {|
-    +srcSet: string,
-    +height: number,
-  |},
-  +default: {|
-    +src: string,
-  |},
-|}
-
-type Props = {|
-  +label?: string,
-  +data: GalleryImgType,
-  +onClick: () => void,
-  +index: number,
-|}
-
-const GalleryImg = ({ label, data, onClick, index }: Props) => {
+const GalleryImg = ({ label, data, onClick, index }) => {
   const imgHeight = isMobile() ? data.mobile.height : data.desktop.height
 
   const handleClick = React.useCallback(() => onClick(index), [index, onClick])
@@ -110,6 +89,15 @@ const GalleryImg = ({ label, data, onClick, index }: Props) => {
       </LazyLoad>
     </Container>
   )
+}
+
+GalleryImg.propTypes = {
+  label: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  // TODO improve PropTypes
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object,
+  index: PropTypes.number,
 }
 
 export const query = graphql`

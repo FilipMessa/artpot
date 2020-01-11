@@ -1,5 +1,5 @@
-// @flow
-
+// TODO
+/* eslint-disable react/prop-types */
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -24,18 +24,6 @@ const getSpaceAfter = () => ({ theme, spaceAfter }) => {
 const getSpaceBefore = () => ({ theme, spaceBefore }) => {
   return spaceBefore ? theme.typography.spacings[spaceBefore] : 0
 }
-
-type Props = {|
-  +element?: 'p' | 'span' | 'div',
-  +children: React$Node,
-  +size?: 'large' | 'normal' | 'small',
-  +type?: 'primary' | 'secondary',
-  +weight?: 'normal' | 'bold',
-  +align?: 'left' | 'center' | 'right' | 'justify',
-  +spaceAfter?: 'small' | 'medium' | 'large',
-  +spaceBefore?: 'small' | 'medium' | 'large',
-  +className?: string,
-|}
 
 const StyledText = styled(({ element: TextElement, children, className }) => {
   return <TextElement className={className}>{children}</TextElement>
@@ -63,7 +51,7 @@ const Text = ({
   spaceAfter,
   spaceBefore,
   className,
-}: Props) => {
+}) => {
   return (
     <StyledText
       className={className}

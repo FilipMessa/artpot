@@ -1,49 +1,25 @@
-// @flow
+//
 
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
 import Layout from '../../components/Layout'
 import Gallery from '../../components/Gallery'
 
-type Default = {|
-  +src: string,
-|}
-
-type Screen = {|
-  +srcSet: string,
-  +height: number,
-|}
-
-type ChildImageSharp = {|
-  +desktop: Screen,
-  +mobile: Screen,
-  +default: Default,
-|}
-
-type Node = {|
-  +id: string,
-  +name: string,
-  +childImageSharp: ChildImageSharp,
-|}
-
-type Props = {|
-  data: {|
-    +works: {|
-      +edges: $ReadOnlyArray<{|
-        +node: Node,
-      |}>,
-    |},
-  |},
-|}
-
-const IndexPage = ({ data }: Props) => {
+const IndexPage = ({ data }) => {
   const nodes = data.works.edges.map(({ node }) => node)
   return (
     <Layout>
       <Gallery images={nodes} />
     </Layout>
   )
+}
+
+IndexPage.propTypes = {
+  // TODO
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object,
 }
 
 export default IndexPage

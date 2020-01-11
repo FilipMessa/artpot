@@ -1,4 +1,5 @@
-// @flow
+// TODO
+/* eslint-disable react/prop-types */
 
 import * as React from 'react'
 import { Link } from 'gatsby'
@@ -15,14 +16,7 @@ const Item = styled(Link)`
   }
 `
 
-export type Props = {|
-  +label: string,
-  +to: string,
-  +partiallyActive?: boolean,
-  +theme: Object, // TODO
-|}
-
-const NavItem = ({ label, to, partiallyActive, theme }: Props) => (
+const NavItem = ({ label, to, partiallyActive, theme }) => (
   <li>
     <Item
       activeStyle={{ opacity: theme.components.navigation.link.activeOpacity }}

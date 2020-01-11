@@ -1,15 +1,11 @@
-// @flow
 import * as React from 'react'
 import media from 'styled-media-query'
 
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import SEO from './SEO'
 import Header from './Header'
 import Navigation from './Navigation'
-
-type Props = {
-  children: React.Node,
-}
 
 const Container = styled.div`
   display: grid;
@@ -51,7 +47,7 @@ const Content = styled.div`
   grid-area: content;
 `
 
-const Layout = ({ children }: Props) => (
+const Layout = ({ children }) => (
   <>
     <SEO />
     <Container>
@@ -68,5 +64,9 @@ const Layout = ({ children }: Props) => (
     </Container>
   </>
 )
+
+Layout.propTypes = {
+  children: PropTypes.element,
+}
 
 export default Layout

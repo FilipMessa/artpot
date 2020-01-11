@@ -1,8 +1,6 @@
-// @flow
-
 import * as React from 'react'
 import styled from 'styled-components'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import { DIRECTION_TYPES } from './consts'
 import { NextItem } from './NextItem'
 
@@ -38,5 +36,5 @@ export function Lightbox({ children }) {
 }
 
 Lightbox.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.element,
 }

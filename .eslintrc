@@ -20,14 +20,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/require-default-props": 0,
     "no-shadow": ["error", { "allow": ["theme"] }],
-    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
-    "flowtype/require-valid-file-annotation": [
-      "error",
-      "always",
-      {
-        "annotationStyle": "line"
-      }
-    ]
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }]
   },
   "settings": {
     "import/resolver": {

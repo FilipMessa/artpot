@@ -1,4 +1,4 @@
-// @flow
+
 /* eslint-disable */
 
 global.___loader = {

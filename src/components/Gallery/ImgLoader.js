@@ -1,8 +1,7 @@
-// @flow
-
 import * as React from 'react'
 import ClipLoader from 'react-spinners/ClipLoader'
 import styled, { withTheme } from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Container = styled.div`
   display: flex;
@@ -11,12 +10,7 @@ const Container = styled.div`
   height: ${({ height }) => height}px;
 `
 
-type Props = {|
-  +height: number,
-  +theme: Object, // @TODO proper flow
-|}
-
-const ImgLoader = ({ height, theme }: Props) => (
+const ImgLoader = ({ height, theme }) => (
   <Container height={height}>
     <ClipLoader
       color={theme.components.imageLoader.color}
@@ -25,5 +19,12 @@ const ImgLoader = ({ height, theme }: Props) => (
     />
   </Container>
 )
+
+ImgLoader.propTypes = {
+  height: PropTypes.number.isRequired,
+  // TODO
+  // eslint-disable-next-line react/forbid-prop-types
+  theme: PropTypes.object,
+}
 
 export default withTheme(ImgLoader)

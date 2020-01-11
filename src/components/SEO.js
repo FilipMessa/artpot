@@ -1,19 +1,9 @@
-// @flow
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
-type GraphQLData = {|
-  +site: {|
-    +siteMetadata: {|
-      +title: string,
-      +description: string,
-      +keywords: string,
-    |},
-  |},
-|}
-
-export const ContentSEO = ({ data }: { data: GraphQLData }) => (
+export const ContentSEO = ({ data }) => (
   <Helmet
     title={data.site.siteMetadata.title}
     meta={[
@@ -38,8 +28,14 @@ const SEO = () => (
         }
       }
     `}
-    render={(data: GraphQLData) => <ContentSEO data={data} />}
+    render={data => <ContentSEO data={data} />}
   />
 )
+
+ContentSEO.propTypes = {
+  // TODO
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object,
+}
 
 export default SEO

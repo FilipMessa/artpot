@@ -1,14 +1,8 @@
-// @flow
-
 import * as React from 'react'
-
-type Props = {
-  level: 1 | 2 | 3 | 4 | 5 | 6,
-  children: React$Node,
-}
+import PropType from 'prop-types'
 
 // @TODO cereate styled components
-const HeadingRenderer = ({ level, children }: Props) => {
+const HeadingRenderer = ({ level, children }) => {
   switch (level) {
     case 1:
       return (
@@ -38,6 +32,11 @@ const HeadingRenderer = ({ level, children }: Props) => {
     default:
       return <span>{children}</span>
   }
+}
+
+HeadingRenderer.propTypes = {
+  level: PropType.number,
+  children: PropType.element.isRequired,
 }
 
 export default HeadingRenderer

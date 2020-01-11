@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import { ModalContext } from '../components/Modal/ModalContext'
 

@@ -1,4 +1,3 @@
-// @flow
 import { getWindowWidth } from './getWindowWidth'
 
 export function isMobile() {

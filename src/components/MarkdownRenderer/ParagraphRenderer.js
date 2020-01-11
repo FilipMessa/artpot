@@ -1,15 +1,14 @@
-// @flow
-
 import * as React from 'react'
+import PropTypes from 'prop-types'
 
 import Text from '../Text'
 
-type Props = {|
-  +children: React.Node,
-|}
-
-const ParagraphRenderer = ({ children }: Props) => {
+const ParagraphRenderer = ({ children }) => {
   return <Text>{children}</Text>
+}
+
+ParagraphRenderer.propTypes = {
+  children: PropTypes.element,
 }
 
 export default ParagraphRenderer

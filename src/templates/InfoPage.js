@@ -1,18 +1,9 @@
-// @flow
-
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 
 import MarkdownRenderer from '../components/MarkdownRenderer'
-
-type Props = {|
-  +data: {|
-    +markdownRemark: {|
-      +rawMarkdownBody: string,
-    |},
-  |},
-|}
 
 export const query = graphql`
   query InfoPageQuery($id: String!) {
@@ -22,12 +13,18 @@ export const query = graphql`
   }
 `
 
-const InfoPage = ({ data }: Props) => {
+const InfoPage = ({ data }) => {
   return (
     <Layout>
       <MarkdownRenderer source={data.markdownRemark.rawMarkdownBody} />
     </Layout>
   )
+}
+
+InfoPage.propTypes = {
+  // TODO
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object,
 }
 
 export default InfoPage

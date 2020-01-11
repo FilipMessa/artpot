@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
@@ -29,16 +28,11 @@ const Content = styled.div`
   }
 `
 
-type Props = {
-  onClose?: () => void,
-  children: React.Node,
-}
-
-const Modal = ({ onClose, children }: Props) => {
+const Modal = ({ onClose, children }) => {
   const [isFullscreen, setScreenState] = React.useState(false)
   const modalRoot = document.getElementById('modal-root')
   // @TODO add right flow-type
-  const node = React.useRef<any>(null)
+  const node = React.useRef(null)
 
   const {
     modalState,
@@ -70,10 +64,10 @@ const Modal = ({ onClose, children }: Props) => {
   const handleOverlayClick = e => {
     if (node.current && node.current.contains(e.target)) {
       // handle click Inside
-       handleToggleFullscreen()
+      handleToggleFullscreen()
     } else {
-    // outside click
-    handleCloseModal()
+      // outside click
+      handleCloseModal()
     }
   }
 

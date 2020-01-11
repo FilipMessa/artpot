@@ -1,5 +1,3 @@
-// @flow
-
 import { generateMedia } from 'styled-media-query'
 
 // MediaQueries

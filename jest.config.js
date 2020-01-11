@@ -1,4 +1,4 @@
-// @flow
+
 /* eslint-disable */
 
 module.exports = {

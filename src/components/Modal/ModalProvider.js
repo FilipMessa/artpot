@@ -1,6 +1,5 @@
-// @flow
-
 import * as React from 'react'
+import PropTypes from 'prop-types'
 import { ModalContext } from './ModalContext'
 import { MODAL_STATES } from './consts'
 
@@ -10,10 +9,10 @@ function switchBodyScroll(state) {
   }
 }
 
-export function ModalProvider({ children }: { children: ?React.Node }) {
+export function ModalProvider({ children }) {
   const [modalState, setModalState] = React.useState('isClose')
 
-  const handleState = (type: $Values<typeof MODAL_STATES>) => () => {
+  const handleState = type => () => {
     const bodyScorllState = MODAL_STATES.OPEN === type ? 'hidden' : 'unset'
 
     switchBodyScroll(bodyScorllState)
@@ -29,4 +28,8 @@ export function ModalProvider({ children }: { children: ?React.Node }) {
   }
 
   return <ModalContext.Provider value={state}>{children}</ModalContext.Provider>
+}
+
+ModalProvider.propTypes = {
+  children: PropTypes.element,
 }

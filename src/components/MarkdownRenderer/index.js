@@ -1,17 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
-// @flow
 
 import * as React from 'react'
 import ReactMarkdown from 'react-markdown'
+import PropTypes from 'prop-types'
 
 import HeadingRenderer from './HeadingRenderer'
 import ParagraphRenderer from './ParagraphRenderer'
 
-type Props = {|
-  +source: string,
-|}
-
-const MarkdownRenderer = ({ source }: Props) => (
+const MarkdownRenderer = ({ source }) => (
   <ReactMarkdown
     source={source}
     renderers={{
@@ -20,5 +16,8 @@ const MarkdownRenderer = ({ source }: Props) => (
     }}
   />
 )
+MarkdownRenderer.propTypes = {
+  source: PropTypes.string,
+}
 
 export default MarkdownRenderer
