@@ -1,11 +1,10 @@
-// TODO
-/* eslint-disable react/prop-types */
-
 import * as React from 'react'
 import { Link } from 'gatsby'
 import styled, { withTheme } from 'styled-components'
+import PropTypes from 'prop-types'
 import Text from '../Text'
 
+// TODO values should come from theme
 const Item = styled(Link)`
   padding: 2px 0;
   cursor: pointer;
@@ -16,7 +15,7 @@ const Item = styled(Link)`
   }
 `
 
-const NavItem = ({ label, to, partiallyActive, theme }) => (
+const NavItem = ({ label, to, partiallyActive = false, theme }) => (
   <li>
     <Item
       activeStyle={{ opacity: theme.components.navigation.link.activeOpacity }}
@@ -27,5 +26,12 @@ const NavItem = ({ label, to, partiallyActive, theme }) => (
     </Item>
   </li>
 )
+
+NavItem.propTypes = {
+  label: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  theme: PropTypes.object.isRequired,
+  partiallyActive: PropTypes.bool,
+}
 
 export default withTheme(NavItem)
