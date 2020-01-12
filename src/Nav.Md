@@ -10,3 +10,20 @@
 
 ## Sub-Navigation
 - 1. step get data for Navigation from GraphQL
+
+query: 
+{
+  allMarkdownRemark(
+    filter: { fileAbsolutePath: { regex: "/(works)/" } }
+  ) {
+    nodes {
+      frontmatter {
+        slug
+        title
+      }
+    }
+  }
+}
+
+
+2. show subNvigation only if user is on work page
