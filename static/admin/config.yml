@@ -2,16 +2,35 @@ backend:
   name: github
   branch: master
   repo: FilipMessa/artpot
-
+ 
 media_folder: static/images/uploads
 public_folder: /images/uploads
 
 collections:
+
+  - name: "works"
+    label: "Works"
+    folder: "src/content/pages/works"
+    create: true
+    editor:
+     preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - label: "Image"
+        name: "image"
+        widget: "list"
+        fields: 
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: Image, name: image, widget: image }
+
   - name: pages
     label: Pages
     delete: false
+    editor:
+     preview: false
     files:
-      - file: src/pages/content/info.md
+      - file: src/content/pages/info.md
         label: Info
         name: info
         fields:
@@ -31,7 +50,7 @@ collections:
                   'bulleted-list',
                 ],
             }
-      - file: src/pages/content/home.md
+      - file: src/content/pages/home.md
         label: Home
         name: home
         fields:

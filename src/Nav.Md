@@ -27,3 +27,5 @@ query:
 
 
 2. show subNvigation only if user is on work page
+
+3. generate new page 

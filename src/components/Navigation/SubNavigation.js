@@ -9,7 +9,6 @@ const query = graphql`
     allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(works)/" } }) {
       nodes {
         frontmatter {
-          slug
           title
         }
       }
@@ -21,6 +20,8 @@ const NavContainer = styled.nav`
   margin-top: 50px;
 `
 
+
+
 const getNavigationData = ({ allMarkdownRemark }) => {
   const pathname = typeof window !== 'undefined' ? window.location.pathname : ''
 
@@ -30,7 +31,7 @@ const getNavigationData = ({ allMarkdownRemark }) => {
   return (
     <NavContainer>
       {allMarkdownRemark.nodes.map(({ frontmatter }) => (
-        <NavItem label={frontmatter.title} to={frontmatter.slug} />
+        <NavItem label={frontmatter.title} to={frontmatter.title.toLowerCase().replace(/ /g,"-")} />
       ))}
     </NavContainer>
   )
