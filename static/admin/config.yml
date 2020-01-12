@@ -7,11 +7,28 @@ media_folder: static/images/uploads
 public_folder: /images/uploads
 
 collections:
+  - name: "works"
+    label: "Works"
+    folder: "src/content/pages/works"
+    create: true
+    slug: "{{title}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+     preview: false
+    fields:
+      - label: "Gallery"
+        name: "galleryImages"
+        widget: "list"
+        field: { label: Image, name: image, widget: image }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+
   - name: pages
     label: Pages
     delete: false
+    editor:
+     preview: false
     files:
-      - file: src/pages/content/info.md
+      - file: src/content/pages/info.md
         label: Info
         name: info
         fields:
@@ -31,7 +48,7 @@ collections:
                   'bulleted-list',
                 ],
             }
-      - file: src/pages/content/home.md
+      - file: src/content/pages/home.md
         label: Home
         name: home
         fields:
