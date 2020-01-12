@@ -1,5 +1,5 @@
 import * as React from 'react'
-import PropType from 'prop-types'
+import PropTypes from 'prop-types'
 
 // @TODO create styled components for heading (design tokens)
 const HeadingRenderer = ({ level, children }) => {
@@ -35,8 +35,11 @@ const HeadingRenderer = ({ level, children }) => {
 }
 
 HeadingRenderer.propTypes = {
-  level: PropType.number,
-  children: PropType.element.isRequired,
+  level: PropTypes.number,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
 }
 
 export default HeadingRenderer

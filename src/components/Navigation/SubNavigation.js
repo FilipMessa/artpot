@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import NavItem from './NavItem'
 
 const query = graphql`
@@ -21,6 +22,11 @@ const NavContainer = styled.nav`
 `
 
 const getNavigationData = ({ allMarkdownRemark }) => {
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : ''
+
+  if (!pathname.match('/works')) {
+    return null
+  }
   return (
     <NavContainer>
       {allMarkdownRemark.nodes.map(({ frontmatter }) => (
@@ -28,6 +34,10 @@ const getNavigationData = ({ allMarkdownRemark }) => {
       ))}
     </NavContainer>
   )
+}
+
+getNavigationData.propTypes = {
+  allMarkdownRemark: PropTypes.object,
 }
 
 const SubNavigation = () => {

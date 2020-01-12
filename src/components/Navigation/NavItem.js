@@ -10,7 +10,8 @@ const Item = styled(Link)`
   cursor: pointer;
   text-decoration: none;
 
-  > span:hover {
+  > span:hover,
+  svg {
     opacity: ${({ theme }) => theme.components.navigation.link.hoverOpacity};
   }
 `
@@ -20,7 +21,7 @@ const NavItem = ({ label, to, partiallyActive = false, theme }) => (
     <Item
       activeStyle={{ opacity: theme.components.navigation.link.activeOpacity }}
       partiallyActive={partiallyActive}
-      to={`/${to}`}
+      to={`${to}`}
     >
       <Text element="span">{label}</Text>
     </Item>
