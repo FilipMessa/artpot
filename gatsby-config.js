@@ -1,4 +1,3 @@
-
 module.exports = {
   siteMetadata: {
     title: 'Artpot',
@@ -62,7 +61,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pagesContent',
-        path: `${__dirname}/src/pages/content`,
+        path: `${__dirname}/src/content/pages`,
       },
     },
     {
