@@ -9,6 +9,8 @@ import Gallery from '../../components/Gallery'
 
 const IndexPage = ({ data }) => {
   const nodes = data.works.edges.map(({ node }) => node)
+
+  console.log(data)
   return (
     <Layout>
       <Gallery images={nodes} />
@@ -33,5 +35,22 @@ export const pageQuery = graphql`
         }
       }
     }
+    images: allMarkdownRemark {
+      edges {
+        node {
+          fileAbsolutePath
+          frontmatter {
+            image {
+              title
+              image {
+                relativePath
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
+
+
