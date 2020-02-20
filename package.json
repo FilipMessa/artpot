@@ -7,6 +7,7 @@
     "node": "11.x"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/runtime": "^7.7.2",
     "faker": "^4.1.0",

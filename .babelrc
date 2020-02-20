@@ -28,6 +28,7 @@
         "loose": true
       }
     ],
+    "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-syntax-dynamic-import",
     "babel-plugin-macros",
     "@babel/plugin-proposal-optional-chaining",
