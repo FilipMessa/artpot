@@ -6,6 +6,8 @@ import PropTypes from 'prop-types'
 
 import HeadingRenderer from './HeadingRenderer'
 import ParagraphRenderer from './ParagraphRenderer'
+import ListItemRenderer from './ListItemRenderer'
+
 
 const MarkdownRenderer = ({ source }) => (
   <ReactMarkdown
@@ -13,6 +15,7 @@ const MarkdownRenderer = ({ source }) => (
     renderers={{
       heading: props => <HeadingRenderer {...props} />,
       paragraph: props => <ParagraphRenderer {...props} />,
+      listItem: props => <ListItemRenderer {...props} />
     }}
   />
 )

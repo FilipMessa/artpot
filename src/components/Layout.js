@@ -1,11 +1,10 @@
-import * as React from 'react'
-import media from 'styled-media-query'
-
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import SEO from './SEO'
+import * as React from 'react'
+import styled from 'styled-components'
+import media from 'styled-media-query'
 import Header from './Header'
 import Navigation from './Navigation'
+import SEO from './SEO'
 
 const Container = styled.div`
   display: grid;

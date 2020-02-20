@@ -1,10 +1,9 @@
 ---
+type: work
 title: Test
 description: test
-image:
-  - title: 'Image '
-    image: /images/uploads/art.JPG
-  - title: test
-    image: /images/uploads/11.jpg
+art:
+  - image: /images/uploads/ja-cv (1).jpg
+    title: la
 ---
 

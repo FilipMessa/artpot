@@ -1,7 +1,7 @@
+import { graphql, StaticQuery } from 'gatsby'
+import PropTypes from 'prop-types'
 import React from 'react'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
-import PropTypes from 'prop-types'
 
 export const ContentSEO = ({ data }) => (
   <Helmet

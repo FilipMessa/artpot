@@ -31,7 +31,7 @@ const Content = styled.div`
 const Modal = ({ onClose, children }) => {
   const [isFullscreen, setScreenState] = React.useState(false)
   const modalRoot = document.getElementById('modal-root')
-  // @TODO add right flow-type
+
   const node = React.useRef(null)
 
   const {

@@ -1,49 +1,37 @@
-//
-
-import * as React from 'react'
 import { graphql } from 'gatsby'
-import PropTypes from 'prop-types'
-
-import Layout from '../../components/Layout'
+import * as React from 'react'
+import { markdownImages } from '../../commonPropTypes'
 import Gallery from '../../components/Gallery'
+import Layout from '../../components/Layout'
+import { getImagesFromEdges } from '../../utils'
+
 
 const IndexPage = ({ data }) => {
-  const nodes = data.works.edges.map(({ node }) => node)
-
-  console.log(data)
+  const result = data.images.edges.reduce(getImagesFromEdges, [])
   return (
     <Layout>
-      <Gallery images={nodes} />
+      <Gallery images={result} />
     </Layout>
   )
 }
 
 IndexPage.propTypes = {
-  // TODO
-  // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.object,
+  data: markdownImages,
 }
 
 export default IndexPage
 
 export const pageQuery = graphql`
   query allWorksQuery {
-    works: allFile(filter: { sourceInstanceName: { eq: "works" } }) {
-      edges {
-        node {
-          ...GalleryImg
-        }
-      }
-    }
     images: allMarkdownRemark {
       edges {
         node {
           fileAbsolutePath
           frontmatter {
-            image {
+            art {
               title
               image {
-                relativePath
+                ...GalleryImg
               }
             }
           }
@@ -52,5 +40,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-

@@ -1,29 +1,10 @@
-// TODO
+// TODO PropTypes
 /* eslint-disable react/prop-types */
 import * as React from 'react'
 import styled from 'styled-components'
-
 import theme from '../../theme/index'
+import { getColorByType, getFontSizes, getSpaceAfter, getSpaceBefore, getWeight } from './helpers'
 
-const getFontSizes = () => ({ size, theme }) => {
-  return theme.typography.fontSizes[size]
-}
-
-const getColorByType = () => ({ type, theme }) => {
-  return theme.typography.colors[type]
-}
-
-const getWeight = () => ({ theme, weight }) => {
-  return theme.typography.weight[weight]
-}
-
-const getSpaceAfter = () => ({ theme, spaceAfter }) => {
-  return spaceAfter ? theme.typography.spacings[spaceAfter] : 0
-}
-
-const getSpaceBefore = () => ({ theme, spaceBefore }) => {
-  return spaceBefore ? theme.typography.spacings[spaceBefore] : 0
-}
 
 const StyledText = styled(({ element: TextElement, children, className }) => {
   return <TextElement className={className}>{children}</TextElement>
@@ -35,6 +16,7 @@ const StyledText = styled(({ element: TextElement, children, className }) => {
   margin-bottom: ${getSpaceAfter()};
   margin-top: ${getSpaceBefore()};
   font-weight: ${getWeight()};
+  line-height: 1rem;
 `
 
 StyledText.defaultProps = {

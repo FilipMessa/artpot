@@ -1,7 +1,7 @@
-import * as React from 'react'
 import { Link } from 'gatsby'
-import styled, { withTheme } from 'styled-components'
 import PropTypes from 'prop-types'
+import * as React from 'react'
+import styled, { withTheme } from 'styled-components'
 import Text from '../Text'
 
 // TODO values should come from theme

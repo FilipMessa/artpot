@@ -26,30 +26,6 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
   })
 }
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const { data } = await graphql(`
-    {
-      markdownRemark(frontmatter: { slug: { eq: "/info" } }) {
-        id
-        frontmatter {
-          slug
-        }
-      }
-    }
-  `)
-
-  createPage({
-    path: data.markdownRemark.frontmatter.slug,
-    component: path.resolve('./src/templates/InfoPage.js'),
-    context: {
-      id: data.markdownRemark.id,
-      slug: data.markdownRemark.frontmatter.slug,
-    },
-  })
-}
-
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
@@ -64,3 +40,57 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  const { data: info } = await graphql(`
+    query InfoPage{
+      markdownRemark(frontmatter: { slug: { eq: "/info" } }) {
+        id
+        frontmatter {
+          slug
+        }
+      }
+    }
+  `)
+
+  createPage({
+    path: info.markdownRemark.frontmatter.slug,
+    component: path.resolve('./src/templates/InfoPage.js'),
+    context: {
+      id: info.markdownRemark.id,
+      slug: info.markdownRemark.frontmatter.slug,
+    },
+  })
+
+
+    const { data: works } = await graphql(`
+    {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "work" } } }) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+
+   const { edges } = works.allMarkdownRemark
+   
+   edges.forEach(({ node }) => {
+     createPage({
+       path: `works/${node.frontmatter.title.toLowerCase().replace(/ /g,"_")}`,
+       component: path.resolve('./src/templates/WorkPage.js'),
+       context: {
+          id: node.id,
+        }
+      })
+    })
+}
+
+

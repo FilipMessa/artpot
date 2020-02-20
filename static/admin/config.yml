@@ -2,25 +2,30 @@ backend:
   name: github
   branch: master
   repo: FilipMessa/artpot
- 
+
 media_folder: static/images/uploads
 public_folder: /images/uploads
 
 collections:
-
   - name: "works"
     label: "Works"
     folder: "src/content/pages/works"
     create: true
     editor:
-     preview: false
+      preview: false
     fields:
+      - { label: "Type", name: "type", widget: "hidden", default: "work" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string", required: false }
-      - label: "Image"
-        name: "image"
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+      - label: "Art"
+        name: "art"
         widget: "list"
-        fields: 
+        fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: Image, name: image, widget: image }
 
@@ -28,38 +33,38 @@ collections:
     label: Pages
     delete: false
     editor:
-     preview: false
+      preview: false
     files:
       - file: src/content/pages/info.md
         label: Info
         name: info
         fields:
-          - { label: 'Slug', name: 'slug', widget: 'hidden', default: '/info' }
-          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: "Slug", name: "slug", widget: "hidden", default: "/info" }
+          - { label: "Title", name: "title", widget: "string" }
           - {
-              label: 'Body',
-              name: 'body',
-              widget: 'markdown',
+              label: "Body",
+              name: "body",
+              widget: "markdown",
               buttons:
                 [
-                  'bold',
+                  "bold",
                   italic,
                   link,
-                  'heading-one',
-                  'heading-two',
-                  'bulleted-list',
+                  "heading-one",
+                  "heading-two",
+                  "bulleted-list",
                 ],
             }
       - file: src/content/pages/home.md
         label: Home
         name: home
         fields:
-          - { label: 'Slug', name: 'slug', widget: 'hidden', default: '/home' }
-          - { label: 'Title', name: 'title', widget: 'hidden' }
+          - { label: "Slug", name: "slug", widget: "hidden", default: "/home" }
+          - { label: "Title", name: "title", widget: "hidden" }
           - {
-              label: 'Image',
-              name: 'poster',
-              widget: 'image',
+              label: "Image",
+              name: "poster",
+              widget: "image",
               allow_multiple: false,
             }
-          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: "Description", name: "description", widget: "string" }
