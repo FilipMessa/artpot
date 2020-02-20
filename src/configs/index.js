@@ -1,10 +1,5 @@
 /* eslint-disable   import/prefer-default-export */
 
-export const LogoConfig = {
-  label: 'Petra Messa',
-  url: '/',
-}
-
-export const lazyLoading = {
+export const LAZY_LOADING = {
   offset: 200,
 }

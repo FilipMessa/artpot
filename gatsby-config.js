@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Artpot',
+    title: 'Petra Messa',
     description: 'Personal art portfolio',
     keywords: 'art, portfolio, artist, paintings',
   },

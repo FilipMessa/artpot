@@ -7,7 +7,7 @@ import { media, breakPoints } from '@theme'
 
 import { isMobile } from '../../utils'
 import ImgLoader from './ImgLoader'
-import { lazyLoading } from '../../configs'
+import { LAZY_LOADING } from '../../configs'
 import Text from '../Text'
 
 const Container = styled.div`
@@ -70,7 +70,7 @@ const GalleryImg = ({ label, data, onClick, index }) => {
     <Container onClick={handleClick}>
       <LazyLoad
         placeholder={<ImgLoader height={imgHeight} />}
-        offset={lazyLoading.offset}
+        offset={LAZY_LOADING.offset}
         height={imgHeight}
       >
         <Picture>
