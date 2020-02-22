@@ -1,11 +1,11 @@
-import * as React from 'react'
-import styled from 'styled-components'
-import Carousel, { Modal, ModalGateway } from 'react-images'
 import PropTypes from 'prop-types'
+import * as React from 'react'
+import Carousel, { Modal, ModalGateway } from 'react-images'
+import styled from 'styled-components'
 import { media } from '@theme'
+import { isMobile } from '../../utils'
 import GalleryImage from './GalleryImg'
 
-import { isMobile } from '../../utils'
 
 const Container = styled.div`
   display: flex;
@@ -42,7 +42,7 @@ const Gallery = ({ images }) => {
             onClick={toggleLightbox}
             key={img.id}
             data={img.childImageSharp}
-            label={`The Mound, 170 x 200 cm, oil on canvas ${img.name}`}
+            label={img.label}
             index={index}
           />
         ))}
@@ -61,7 +61,7 @@ const Gallery = ({ images }) => {
   )
 }
 Gallery.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.element),
+  images: PropTypes.array,
 }
 
 export default Gallery

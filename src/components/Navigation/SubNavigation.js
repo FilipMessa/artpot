@@ -30,8 +30,9 @@ const getNavigationData = ({ allMarkdownRemark }) => {
     <NavContainer>
       {allMarkdownRemark.nodes.map(({ frontmatter }) => (
         <NavItem
+          key={frontmatter.title}
           label={frontmatter.title}
-          to={`works/${frontmatter.title.toLowerCase().replace(/ /g, '_')}`}
+          to={`/works/${frontmatter.title.toLowerCase().replace(/ /g, '_')}`}
         />
       ))}
     </NavContainer>

@@ -8,6 +8,7 @@ import { getImagesFromEdges } from '../../utils'
 
 const IndexPage = ({ data }) => {
   const result = data.images.edges.reduce(getImagesFromEdges, [])
+
   return (
     <Layout>
       <Gallery images={result} />
@@ -29,7 +30,10 @@ export const pageQuery = graphql`
           fileAbsolutePath
           frontmatter {
             art {
-              title
+              name
+              material
+              dimensions
+              year
               image {
                 ...GalleryImg
               }

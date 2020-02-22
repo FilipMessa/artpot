@@ -3,6 +3,7 @@ import * as React from 'react'
 import { markdownImages } from '../commonPropTypes'
 import Gallery from '../components/Gallery'
 import Layout from '../components/Layout'
+import { createImageLabel } from '../utils'
 
 
 export const query = graphql`
@@ -12,6 +13,10 @@ export const query = graphql`
         title
         description
         art {
+          name
+          material
+          dimensions
+          year
           image {
             ...GalleryImg
           }
@@ -23,7 +28,7 @@ export const query = graphql`
 
 const WorkPage = ({ data }) => {
   const images =
-    data.markdownRemark?.frontmatter?.art?.map(({ image }) => image) || []
+    data.markdownRemark?.frontmatter?.art?.map((item) => ({...item.image, label: createImageLabel(item)})) || []
 
   return (
     <Layout>
