@@ -3,7 +3,7 @@ import * as React from 'react'
 import { markdownImages } from '../../commonPropTypes'
 import Gallery from '../../components/Gallery'
 import Layout from '../../components/Layout'
-import { getImagesFromEdges } from '../../utils'
+import { getImagesFromEdges, shuffleArray } from '../../utils'
 
 
 const IndexPage = ({ data }) => {
@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Gallery images={result} />
+      <Gallery images={shuffleArray(result)} />
     </Layout>
   )
 }

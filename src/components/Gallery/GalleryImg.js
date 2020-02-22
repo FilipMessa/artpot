@@ -14,12 +14,14 @@ const Container = styled.div`
   grid-template-areas:
     'image'
     'label';
-
+    
+  display: flex;
   position: relative;
   margin: 15px;
 
   ${media.lessThan('medium')`
     width: 100%;
+    flex-direction: column;
   `}
 
   &:hover {
@@ -42,9 +44,7 @@ const Label = styled(Text)`
   ${media.greaterThan('medium')`
       position: absolute;
       opacity: 0;
-      left: 0;
-      right: 0;
-      top: calc(50% - 0.9em);
+      align-self: center;
       margin: 0 auto;
       text-align: center;
       padding: 0 1rem;
@@ -111,7 +111,7 @@ export const query = graphql`
       mobile: fixed(width: 768) {
         ...GatsbyImageSharpFixed
       }
-      default: fixed(width: 500) {
+      default: fluid(maxWidth: 2000) {
         src
       }
     }
