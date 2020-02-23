@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import PropTypes from 'prop-types'
 
 import HeadingRenderer from './HeadingRenderer'
-import ParagraphRenderer from './ParagraphRenderer'
+import TextRenderer from './TextRenderer'
 import ListItemRenderer from './ListItemRenderer'
 
 
@@ -14,8 +14,9 @@ const MarkdownRenderer = ({ source }) => (
     source={source}
     renderers={{
       heading: props => <HeadingRenderer {...props} />,
-      paragraph: props => <ParagraphRenderer {...props} />,
-      listItem: props => <ListItemRenderer {...props} />
+      paragraph: props => <TextRenderer {...props} />,
+      listItem: props => <ListItemRenderer {...props} />,
+      strong: props => <TextRenderer element="span" weight="bold" {...props} />,
     }}
   />
 )

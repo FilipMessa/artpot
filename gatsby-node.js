@@ -57,7 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   createPage({
     path: info.markdownRemark.frontmatter.slug,
-    component: path.resolve('./src/templates/InfoPage.js'),
+    component: path.resolve('./src/templates/infoPage.js'),
     context: {
       id: info.markdownRemark.id,
       slug: info.markdownRemark.frontmatter.slug,
@@ -85,7 +85,7 @@ exports.createPages = async ({ graphql, actions }) => {
    edges.forEach(({ node }) => {
      createPage({
        path: `works/${node.frontmatter.title.toLowerCase().replace(/ /g,"_")}`,
-       component: path.resolve('./src/templates/WorkPage.js'),
+       component: path.resolve('./src/templates/workPage.js'),
        context: {
           id: node.id,
         }

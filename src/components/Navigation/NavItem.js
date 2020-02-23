@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import * as React from 'react'
 import styled, { withTheme } from 'styled-components'
 import Text from '../Text'
+import theme from '../../theme'
 
 // TODO values should come from theme
 const Item = styled(Link)`
@@ -16,6 +17,10 @@ const Item = styled(Link)`
   }
 `
 
+Item.defaultProps = {
+  theme
+}
+
 const NavItem = ({ label, to, partiallyActive = false, theme }) => (
   <li>
     <Item
@@ -28,10 +33,14 @@ const NavItem = ({ label, to, partiallyActive = false, theme }) => (
   </li>
 )
 
+NavItem.defaultProps = {
+  theme
+}
+
 NavItem.propTypes = {
   label: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object,
   partiallyActive: PropTypes.bool,
 }
 

@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "author": "Filip Messa <filip.messa@gmail.com>",
   "engines": {
-    "node": "11.x"
+    "node": "10.x"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.8.3",

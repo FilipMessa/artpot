@@ -5,6 +5,7 @@ import media from 'styled-media-query'
 import Header from './Header'
 import Navigation from './Navigation'
 import SEO from './SEO'
+import theme from '../theme'
 
 const Container = styled.div`
   display: grid;
@@ -26,6 +27,10 @@ const Container = styled.div`
       'content';
     `}
 `
+Container.defaultProps = {
+  theme
+}
+
 
 const LeftSide = styled.div`
   grid-area: leftSide;

@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Droid Sans', sans-serif;
+    font-family: 'Droid Sans', Arial, sans-serif;
     font-size: ${({ theme }) => theme.typography.defaultSize};
   }
 `

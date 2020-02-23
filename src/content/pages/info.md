@@ -7,7 +7,7 @@ title: Curriculum vitae
 * Petra Mešša, maiden name Vojteková
 * Born January 31. 1987 in Uherské Hradiště, CZ
 * Lives and works in Prague, CZ
-* **Contact: messa.petra@gmail.com** 
+* Contact: **messa.petra@gmail.com**
 
 ## EDUCATION
 
