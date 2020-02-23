@@ -7,16 +7,16 @@ title: Curriculum vitae
 * Petra Mešša, maiden name Vojteková
 * Born January 31. 1987 in Uherské Hradiště, CZ
 * Lives and works in Prague, CZ
-* Contact: messa.petra@gmail.com 
+* **Contact: messa.petra@gmail.com** 
 
 ## EDUCATION
 
-* 2013-2014/ Academy of Fine Arts and Design in Bratislava, Slovakia  
-Department of painting and other media, Mgr. art. Klaudia Kosziba, ArtD.
-* 2008-2013/ Academy of Fine Arts and Design in Bratislava, Slovakia  
-Department of painting and other media,  prof. Daniel Fischer
-* 2002-2006/ Associated High School of Clothing in Bratislava, Slovakia  
-Department of fashion design
+* 2013-2014/ Academy of Fine Arts and Design in Bratislava, Slovakia\
+  Department of painting and other media, Mgr. art. Klaudia Kosziba, ArtD.
+* 2008-2013/ Academy of Fine Arts and Design in Bratislava, Slovakia\
+  Department of painting and other media,  prof. Daniel Fischer
+* 2002-2006/ Associated High School of Clothing in Bratislava, Slovakia\
+  Department of fashion design
 
 ## SOLO EXHIBITIONS
 
