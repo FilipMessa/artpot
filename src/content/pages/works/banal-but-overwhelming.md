@@ -1,7 +1,7 @@
 ---
 type: work
 title: 'Banal, but overwhelming'
-description:
+description: >-
   ...usually not an impressive natural phenomenon. It’s quite the opposite
   way... banal and notoriously known scenes of vast nature, with the recurring
   elements... so natural and obvious, but also kind of “invisible” in the world
