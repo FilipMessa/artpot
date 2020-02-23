@@ -21,8 +21,8 @@ Item.defaultProps = {
   theme
 }
 
-const NavItem = ({ label, to, partiallyActive = false, theme }) => (
-  <li>
+const NavItem = ({ label, to, partiallyActive = false, theme, className }) => (
+  <li className={className}>
     <Item
       activeStyle={{ opacity: theme.components.navigation.link.activeOpacity }}
       partiallyActive={partiallyActive}
@@ -42,6 +42,7 @@ NavItem.propTypes = {
   to: PropTypes.string.isRequired,
   theme: PropTypes.object,
   partiallyActive: PropTypes.bool,
+  className: PropTypes.string
 }
 
 export default withTheme(NavItem)

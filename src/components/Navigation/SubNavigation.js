@@ -4,6 +4,8 @@ import * as React from 'react'
 import styled from 'styled-components'
 import NavItem from './NavItem'
 
+const SubNavItem = styled(NavItem)`padding: 1.5px 0;`
+
 const query = graphql`
   query SubNavigationQuery {
     allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(works)/" } }) {
@@ -29,10 +31,10 @@ const getNavigationData = ({ allMarkdownRemark }) => {
   return (
     <NavContainer>
       {allMarkdownRemark.nodes.map(({ frontmatter }) => (
-        <NavItem
+        <SubNavItem
           key={frontmatter.title}
           label={frontmatter.title}
-          to={`/works/${frontmatter.title.toLowerCase().replace(/ /g, '_')}`}
+          to={`/works/${frontmatter.title.toLowerCase().replace(/ /g, '_').replace(/[^\w\s]/gi,"")}`} // @TODO refactor
         />
       ))}
     </NavContainer>

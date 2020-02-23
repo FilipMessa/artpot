@@ -84,7 +84,7 @@ exports.createPages = async ({ graphql, actions }) => {
    
    edges.forEach(({ node }) => {
      createPage({
-       path: `works/${node.frontmatter.title.toLowerCase().replace(/ /g,"_")}`,
+       path: `works/${node.frontmatter.title.toLowerCase().replace(/ /g,"_").replace(/[^\w\s]/gi,"")}`, // @TODO refactor
        component: path.resolve('./src/templates/workPage.js'),
        context: {
           id: node.id,
@@ -92,5 +92,7 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 }
+
+
 
 
