@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import * as React from 'react'
+import React from 'react'
 import { markdownImages } from '../../commonPropTypes'
 import Gallery from '../../components/Gallery'
 import Layout from '../../components/Layout'

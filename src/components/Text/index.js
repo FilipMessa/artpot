@@ -1,6 +1,6 @@
 // TODO PropTypes
 /* eslint-disable react/prop-types */
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import theme from '../../theme/index'
 import { getColorByType, getFontSizes, getSpaceAfter, getSpaceBefore, getWeight } from './helpers'

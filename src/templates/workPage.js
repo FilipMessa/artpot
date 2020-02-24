@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import * as React from 'react'
+import React from 'react'
 import { markdownImages } from '../commonPropTypes'
 import Gallery from '../components/Gallery'
 import Layout from '../components/Layout'
@@ -26,9 +26,11 @@ export const query = graphql`
   }
 `
 
+const getImagesWithLabel = (data) =>   data.markdownRemark?.frontmatter?.art?.map((item) => ({...item.image, label: createImageLabel(item)})) || []
+
 const WorkPage = ({ data }) => {
-  const images =
-    data.markdownRemark?.frontmatter?.art?.map((item) => ({...item.image, label: createImageLabel(item)})) || []
+
+  const images = React.useMemo(() => getImagesWithLabel(data), [data])
 
   return (
     <Layout>

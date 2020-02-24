@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import ClipLoader from 'react-spinners/ClipLoader'
 import styled, { withTheme } from 'styled-components'
 import PropTypes from 'prop-types'

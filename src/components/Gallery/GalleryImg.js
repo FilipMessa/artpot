@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import LazyLoad from 'react-lazyload'
 import { graphql } from 'gatsby'
@@ -118,4 +118,4 @@ export const query = graphql`
   }
 `
 
-export default GalleryImg
+export default React.memo(GalleryImg);

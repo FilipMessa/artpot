@@ -1,6 +1,6 @@
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import NavItem from './NavItem'
 
@@ -56,4 +56,4 @@ const SubNavigation = () => {
   return <StaticQuery query={query} render={getNavigationData} />
 }
 
-export default SubNavigation
+export default React.memo(SubNavigation)

@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import * as React from 'react'
+import React from 'react'
 import styled, { withTheme } from 'styled-components'
 import Text from '../Text'
 import theme from '../../theme'
@@ -50,4 +50,4 @@ NavItem.propTypes = {
 ])
 }
 
-export default withTheme(NavItem)
+export default withTheme(React.memo(NavItem))
