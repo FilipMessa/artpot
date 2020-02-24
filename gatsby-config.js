@@ -46,13 +46,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'common',
-        path: `${__dirname}/src/images/common`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         name: 'pagesContent',
         path: `${__dirname}/src/content/pages`,
       },
@@ -65,7 +58,7 @@ module.exports = {
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
-        display: 'browser',
+        display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png', // TODO change This path is relative to the root of the site.// This path is relative to the root of the site.
       },
     },
@@ -74,14 +67,21 @@ module.exports = {
       resolve: 'gatsby-plugin-eslint',
       options: {
         test: /\.js$/,
-        exclude: /(node_modules|cache|public)/,
+        exclude: /(node_modules|cache|public|.now|.circleci|coverage)/,
         options: {
           emitWarning: true,
           failOnError: false,
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en',
+      },
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-offline',
+    'gatsby-plugin-webpack-bundle-analyser-v2',
   ],
 }

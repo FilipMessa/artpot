@@ -62,7 +62,7 @@ const Layout = ({ children }) => (
         <Navigation />
       </Navbar>
       <Content>
-        <div>{children}</div>
+        <main>{children}</main>
       </Content>
       <LeftSide />
     </Container>

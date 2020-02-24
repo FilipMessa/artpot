@@ -7,12 +7,9 @@ const Navigation = () => (
     <ul>
       <NavItem label="home" to="/" />
       <NavItem label="info" to="/info" />
-      <div>
-        <NavItem label="works" to="/works" partiallyActive />
-        <nav>
-          <SubNavigation />
-        </nav>
-      </div>
+      <NavItem label="works" to="/works" partiallyActive>
+        <SubNavigation />
+      </NavItem>
     </ul>
   </nav>
 )

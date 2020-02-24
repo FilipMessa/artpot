@@ -13,7 +13,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+        <link crossOrigin="anonymous" rel="preconnect" href="https://fonts.gstatic.com/" />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
@@ -38,4 +38,4 @@ HTML.propTypes = {
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
-} //      
+} //
