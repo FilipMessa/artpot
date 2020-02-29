@@ -12,6 +12,13 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+            options: {
+              analyzerMode: `server`,
+              analyzerPort: `8888`,
+            },
+          },
+          {
             resolve: 'gatsby-remark-relative-images',
           },
           {
