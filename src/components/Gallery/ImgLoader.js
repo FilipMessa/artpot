@@ -9,10 +9,12 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: ${({ height }) => height}px;
+  width: ${({ width }) => width}px;
+  background-color: red;
 `
 
-const ImgLoader = ({ height, theme = defaultTheme}) => (
-  <Container height={height}>
+const ImgLoader = ({ size, theme = defaultTheme}) => (
+  <Container height={size.height} width={size.width} >
     <ClipLoader
       color={theme.components.imageLoader.color}
       sizeUnit="px"
@@ -23,6 +25,10 @@ const ImgLoader = ({ height, theme = defaultTheme}) => (
 
 ImgLoader.propTypes = {
   height: PropTypes.number.isRequired,
+  size: PropTypes.shape({
+    height: PropTypes.number,
+    width: PropTypes.number,
+  }),
   // TODO
   // eslint-disable-next-line react/forbid-prop-types
   theme: PropTypes.object,

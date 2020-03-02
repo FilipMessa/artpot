@@ -62,16 +62,16 @@ const Picture = styled.picture`
 `
 
 const GalleryImg = ({ label, data, onClick, index }) => {
-  const imgHeight = isMobile() ? data.mobile.height : data.desktop.height
+  const size = isMobile() ? { height: data.mobile.height, width: data.mobile.width } : { height: data.desktop.height, width: data.desktop.width }
 
   const handleClick = React.useCallback(() => onClick(index), [index, onClick])
 
   return (
     <Container onClick={handleClick}>
       <LazyLoad
-        placeholder={<ImgLoader height={imgHeight} />}
+        once
         offset={LAZY_LOADING.offset}
-        height={imgHeight}
+        height={size.height}
       >
         <Picture>
           <source

@@ -1,5 +1,5 @@
 /* eslint-disable   import/prefer-default-export */
 
 export const LAZY_LOADING = {
-  offset: 200,
+  offset: 400,
 }
