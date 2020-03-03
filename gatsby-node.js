@@ -57,7 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   createPage({
     path: info.markdownRemark.frontmatter.slug,
-    component: path.resolve('./src/templates/infoPage.js'),
+    component: path.resolve('./src/templates/informPage.js'),
     context: {
       id: info.markdownRemark.id,
       slug: info.markdownRemark.frontmatter.slug,
