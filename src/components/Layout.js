@@ -13,9 +13,12 @@ const Container = styled.div`
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas:
     'header header header'
-    'navbar content leftSide';
-  padding: ${({ theme }) => theme.layout.padding};
+    'navbar content rightSpace';
+
+  padding: ${({ theme }) => theme.layout.padding.desktop};
+
   ${media.lessThan('medium')`
+    padding: ${({ theme }) => theme.layout.padding.mobile};
     grid-template-columns: none;
     grid-template-rows: 1fr;
 
@@ -28,19 +31,14 @@ const Container = styled.div`
     `}
 `
 Container.defaultProps = {
-  theme
+  theme,
 }
 
-
-const LeftSide = styled.div`
-  grid-area: leftSide;
+const RightSpace = styled.div`
+  grid-area: rightSpace;
   ${media.lessThan('medium')`
     display: none;
   `}
-`
-
-const HeaderW = styled.div`
-  grid-area: header;
 `
 
 const Navbar = styled.div`
@@ -55,16 +53,14 @@ const Layout = ({ children }) => (
   <>
     <SEO />
     <Container>
-      <HeaderW>
-        <Header />
-      </HeaderW>
       <Navbar>
+        <Header />
         <Navigation />
       </Navbar>
       <Content>
         <main>{children}</main>
       </Content>
-      <LeftSide />
+      <RightSpace />
     </Container>
   </>
 )

@@ -95,7 +95,7 @@ const theme = {
   zIndex,
   colors,
   layout: {
-    padding: '1.063em',
+    padding: { desktop: '4em 3.5rem', mobile: "1.5rem" },
   },
   ...getHeadingTokens(),
   components: {

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { media, breakPoints } from '@theme'
 
 import { isMobile } from '../../utils'
-import ImgLoader from './ImgLoader'
+// import ImgLoader from './ImgLoader'
 import { LAZY_LOADING } from '../../configs'
 import Text from '../Text'
 
@@ -17,11 +17,14 @@ const Container = styled.div`
     
   display: flex;
   position: relative;
-  margin: 15px;
+  margin-bottom: 1.3em;
+  margin-left: 1.3em;
+ 
 
   ${media.lessThan('medium')`
     width: 100%;
     flex-direction: column;
+    margin-left: 0em;
   `}
 
   &:hover {

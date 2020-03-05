@@ -8,7 +8,7 @@ import Text from '../Text'
 const Link = styled(GatsbyLink)`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.black};
-  padding: 1.063em 0;
+  padding-bottom: 13px;
 `
 
 Link.defaultProps = {

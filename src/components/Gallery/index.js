@@ -12,6 +12,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   ${media.greaterThan('medium')`
     flex-direction: row;
+
   `}
 `
 
