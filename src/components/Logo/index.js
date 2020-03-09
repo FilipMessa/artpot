@@ -2,6 +2,7 @@ import { graphql, Link as GatsbyLink, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import media from 'styled-media-query'
 import theme from '../../theme/index'
 import Text from '../Text'
 
@@ -9,6 +10,10 @@ const Link = styled(GatsbyLink)`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.black};
   padding-bottom: 13px;
+
+  ${media.lessThan('medium')`
+    font-size: 1.233rem;
+  `}
 `
 
 Link.defaultProps = {

@@ -2,10 +2,14 @@ import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import media from 'styled-media-query'
 import NavItem from './NavItem'
 
 const SubNavItem = styled(NavItem)`
-  padding: 1.5px 0;
+  padding: 0.1rem 0;
+  ${media.lessThan('medium')`
+    padding: 0.25rem 0;
+  `}
 `
 
 const query = graphql`
