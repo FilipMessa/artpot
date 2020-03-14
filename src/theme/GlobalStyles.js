@@ -25,6 +25,35 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Droid Sans', Arial, sans-serif;
     font-size: ${({ theme }) => theme.typography.defaultSize};
   }
+
+  /* react-image workaround for custom height */
+  .react-images__view img  {
+    max-height: 90vh;
+  }
+  .react-images__view--isFullscreen img {
+    max-height: 100vh;
+  }
+
+  .react-images__header_button:hover {
+    color: rgba(0,0,0,0.75) !important;
+  }
+
+  .react-images__header--isFullscreen .react-images__header_button--fullscreen {
+    color: rgba(255,255,255,0.6) !important;
+  } 
+
+  .react-images__header--isFullscreen .react-images__header_button--fullscreen:hover {
+    color: rgba(255,255,255,0.75) !important;
+  } 
+  
+  .react-images__header--isFullscreen .react-images__header_button--close {
+    color: rgba(255,255,255,0.6) !important;
+  }
+
+  .react-images__header--isFullscreen .react-images__header_button--close:hover {
+    color: rgba(255,255,255,0.75) !important;
+  }
+
 `
 
 export default GlobalStyle

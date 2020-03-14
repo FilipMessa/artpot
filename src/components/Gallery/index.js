@@ -1,11 +1,13 @@
+import { media } from '@theme'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import styled from 'styled-components'
-import { media } from '@theme'
 import { isMobile } from '../../utils'
 import GalleryImage from './GalleryImg'
 
+const WHITE = '#fff';
+const BLACK = 'rgba(0, 0, 0, 0.6)'
 
 const Container = styled.div`
   display: flex;
@@ -15,6 +17,36 @@ const Container = styled.div`
 
   `}
 `
+
+const getButtonStyles = (base, state) => {
+  return ({
+  ...base,
+  color: state.isFullscreen? WHITE : BLACK,
+})}
+
+const modalCustomStyles = {
+  blanket: base => ({
+    ...base,
+    backgroundColor: `${WHITE} !important`,
+  }),
+}
+
+const carouselCustomStyles = {
+  header: base => ({
+      ...base,
+      background: 'none !important',
+    
+  }),
+  footer: base => ({
+    ...base,
+    background: 'none !important',
+  }),
+  headerClose: getButtonStyles,
+  headerFullscreen: getButtonStyles,
+  navigationPrev: getButtonStyles,
+  navigationNext: getButtonStyles,
+  footerCount: getButtonStyles
+}
 
 const Gallery = ({ images }) => {
   const [modalIsOpen, setModalState] = React.useState(false)
@@ -29,9 +61,9 @@ const Gallery = ({ images }) => {
     childImageSharp: {
       default: { src },
     },
-  }) => {
-    return { src }
-  }
+  }) => ({
+    src 
+  })
 
   const lightImgs = images.map(getImagesSrc)
 
@@ -52,8 +84,12 @@ const Gallery = ({ images }) => {
       {!isMobile() && (
         <ModalGateway>
           {modalIsOpen ? (
-            <Modal onClose={toggleLightbox}>
-              <Carousel views={lightImgs} currentIndex={selectedIndex} />
+            <Modal onClose={toggleLightbox} styles={modalCustomStyles}>
+              <Carousel
+                styles={carouselCustomStyles}
+                views={lightImgs}
+                currentIndex={selectedIndex}
+              />
             </Modal>
           ) : null}
         </ModalGateway>
