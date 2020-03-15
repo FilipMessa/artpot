@@ -1,5 +1,5 @@
 export { getWindowWidth } from './getWindowWidth'
 export { isMobile } from './isMobile'
 export { getImagesFromEdges } from './getImagesFromEdges'
-export { createImageLabel } from './createImageLabel'
+export { ImageLabel } from '../components/ImageLabel'
 export { shuffleArray } from './shuffleArray'

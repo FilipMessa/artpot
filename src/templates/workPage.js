@@ -3,8 +3,8 @@ import React from 'react'
 import { markdownImages } from '../commonPropTypes'
 import Gallery from '../components/Gallery'
 import Layout from '../components/Layout'
-import { createImageLabel } from '../utils'
 
+import { ImageLabel } from '../components/ImageLabel'
 
 export const query = graphql`
   query WorkPageQuery($id: String!) {
@@ -26,10 +26,21 @@ export const query = graphql`
   }
 `
 
-const getImagesWithLabel = (data) =>   data.markdownRemark?.frontmatter?.art?.map((item) => ({...item.image, label: createImageLabel(item)})) || []
+const getImagesWithLabel = data =>
+  data.markdownRemark?.frontmatter?.art?.map(item => ({
+    ...item.image,
+    label: (
+      <ImageLabel
+        image={item.image}
+        name={item.name}
+        material={item.material}
+        dimensions={item.dimensions}
+        year={item.year}
+      />
+    ),
+  })) || []
 
 const WorkPage = ({ data }) => {
-
   const images = React.useMemo(() => getImagesWithLabel(data), [data])
 
   return (
