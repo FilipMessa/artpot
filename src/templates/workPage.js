@@ -13,6 +13,7 @@ export const query = graphql`
         title
         description
         art {
+          type
           name
           material
           dimensions
@@ -31,6 +32,7 @@ const getImagesWithLabel = data =>
     ...item.image,
     label: (
       <ImageLabel
+        type={item.type}
         image={item.image}
         name={item.name}
         material={item.material}

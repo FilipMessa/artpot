@@ -25,30 +25,54 @@ collections:
       - label: "Art"
         name: "art"
         widget: "list"
-        fields:
-          - { label: "Name", name: "name", widget: "string", required: true }
-          - { label: Image, name: image, widget: image, required: true }
-          - {
-              label: "Technique/Material",
-              name: "material",
-              widget: "string",
-              required: true,
-            }
-          - {
-              label: "Dimensions",
-              name: "dimensions",
-              widget: "string",
-              required: true,
-            }
-          - {
-              label: "Year",
-              name: "year",
-              widget: "date",
-              format: "YYYY",
-              dateFormat: "YYYY",
-              timeFormat: "YYYY",
-              required: true,
-            }
+        types:
+          - label: "Artwork"
+            name: "artwork"
+            widget: object
+            fields:
+              - {
+                  label: "Name",
+                  name: "name",
+                  widget: "string",
+                  required: true,
+                }
+              - { label: Image, name: image, widget: image, required: true }
+              - {
+                  label: "Technique/Material",
+                  name: "material",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  label: "Dimensions",
+                  name: "dimensions",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  label: "Year",
+                  name: "year",
+                  widget: "date",
+                  format: "YYYY",
+                  dateFormat: "YYYY",
+                  timeFormat: "YYYY",
+                  required: true,
+                }
+          - label: "Photo"
+            name: "photo"
+            widget: object
+            fields:
+              - { label: "Name", name: "name", widget: string, required: true }
+              - { label: Image, name: image, widget: image, required: true }
+              - {
+                  label: "Year",
+                  name: "year",
+                  widget: "date",
+                  format: "YYYY",
+                  dateFormat: "YYYY",
+                  timeFormat: "YYYY",
+                  required: true,
+                }
 
   - name: pages
     label: Pages

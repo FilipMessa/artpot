@@ -95,7 +95,7 @@ const GalleryImg = ({ label, data, onClick, index }) => {
 }
 
 GalleryImg.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.element,
   onClick: PropTypes.func.isRequired,
   // TODO improve PropTypes
   // eslint-disable-next-line react/forbid-prop-types

@@ -30,6 +30,7 @@ export const pageQuery = graphql`
           fileAbsolutePath
           frontmatter {
             art {
+              type
               name
               material
               dimensions

@@ -21,46 +21,36 @@ description: >-
   was focused on viewer's action on such an occasion and his ways of coping with
   frustration, which the situation inevitably brought.
 art:
-  - dimensions: ''
+  - type: photo
     image: /images/uploads/Diploma work 1.jpg
-    material: ''
     name: Diploma work
     year: '2014'
-  - dimensions: ''
+  - type: photo
     image: /images/uploads/Diploma work 2.jpg
-    material: ''
     name: Diploma work
     year: '2014'
-  - dimensions: ''
+  - type: photo
     image: /images/uploads/Diploma work 3.jpg
-    material: ''
     name: Diploma work
     year: '2014'
-  - dimensions: ''
+  - type: photo
     image: /images/uploads/Diploma work 4.jpg
-    material: ''
     name: Diploma work
     year: '2014'
-  - dimensions: ''
+  - type: photo
     image: /images/uploads/Diploma work 5.jpg
-    material: ''
     name: Diploma work
     year: '2014'
-  - dimensions: ''
+  - type: photo
     image: /images/uploads/Diploma work 6.jpg
-    material: ''
     name: Diploma work
     year: '2014'
-  - dimensions: ''
+  - type: photo
     image: /images/uploads/Diploma work 7.jpg
-    material: ''
     name: Diploma work
     year: '2014'
-  - dimensions: ''
+  - type: photo
     image: /images/uploads/Diploma work 8.jpg
-    material: ''
     name: Diploma work
     year: '2014'
 ---
-
-Diploma work 1
