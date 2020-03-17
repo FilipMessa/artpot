@@ -3,10 +3,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import GatsbyImg from 'gatsby-image'
+import media from 'styled-media-query'
 import Text from './Text'
 
-
 const Container = styled.div`
+  ${media.lessThan('medium')`
+    margin-top: 30px;  
+`}
+
   display: grid;
   grid-template-areas:
     'image'
@@ -31,7 +35,7 @@ const Poster = ({ data }) => {
       <Image
         fluid={data.markdownRemark.frontmatter.poster.childImageSharp.fluid}
       />
-      <Label spaceAfter="large" spaceBefore="small">
+      <Label spaceAfter="large" spaceBefore="small" size="medium">
         {data.markdownRemark.frontmatter.description}
       </Label>
     </Container>

@@ -16,6 +16,7 @@ const typography = {
   fontSizes: {
     small: '0.777em',
     normal: '1em',
+    medium: '1.1em',
     large: '1.3em',
   },
   colors: {
