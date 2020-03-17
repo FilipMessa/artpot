@@ -44,7 +44,7 @@ const WorkPage = ({ data }) => {
   const images = React.useMemo(() => getImagesWithLabel(data), [data])
 
   return (
-    <Layout>
+    <Layout withRightSpace={false}>
       <Gallery images={images} />
     </Layout>
   )

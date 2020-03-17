@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => {
   const result = data.images.edges.reduce(getImagesFromEdges, [])
 
   return (
-    <Layout>
+    <Layout withRightSpace={false}>
       <Gallery images={shuffleArray(result)} />
     </Layout>
   )

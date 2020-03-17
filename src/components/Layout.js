@@ -13,8 +13,7 @@ const Container = styled.div`
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas:
     'header header header'
-    'navbar content rightSpace';
-
+    'navbar content ${({ withRightSpace }) => withRightSpace ? 'rightSpace' : 'content'}';
   padding: ${({ theme }) => theme.layout.padding.desktop};
 
   ${media.lessThan('medium')`
@@ -49,10 +48,10 @@ const Content = styled.div`
   grid-area: content;
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, withRightSpace = true }) => (
   <>
     <SEO />
-    <Container>
+    <Container withRightSpace={withRightSpace}>
       <Navbar>
         <Header />
         <Navigation />
@@ -60,12 +59,13 @@ const Layout = ({ children }) => (
       <Content>
         <main>{children}</main>
       </Content>
-      <RightSpace />
+      {withRightSpace && <RightSpace />}
     </Container>
   </>
 )
 
 Layout.propTypes = {
+  withRightSpace: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
