@@ -3,7 +3,7 @@ import React from 'react'
 import { markdownImages } from '../../commonPropTypes'
 import Gallery from '../../components/Gallery'
 import Layout from '../../components/Layout'
-import { getImagesFromEdges, shuffleArray } from '../../utils'
+import { getImagesFromEdges } from '../../utils'
 
 
 const IndexPage = ({ data }) => {
@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout withRightSpace={false}>
-      <Gallery images={shuffleArray(result)} />
+      <Gallery images={result} />
     </Layout>
   )
 }
@@ -24,7 +24,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query allWorksQuery {
-    images: allMarkdownRemark {
+    images: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___art___year]}) {
       edges {
         node {
           fileAbsolutePath
