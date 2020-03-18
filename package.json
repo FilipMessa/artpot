@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.8.7",
+    "@umijs/hooks": "^1.8.0",
     "faker": "^4.1.0",
     "gatsby": "^2.19.28",
     "gatsby-image": "^2.2.42",

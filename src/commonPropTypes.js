@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 export const art = PropTypes.arrayOf(
   PropTypes.shape({
     name: PropTypes.string.isRequired,
-    material: PropTypes.string.isRequired,
-    dimensions: PropTypes.string.isRequired,
+    material: PropTypes.string,
+    dimensions: PropTypes.string,
     year: PropTypes.string.isRequired,
     image: PropTypes.shape({
       id: PropTypes.string.isRequired,
