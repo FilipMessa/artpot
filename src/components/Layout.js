@@ -18,6 +18,7 @@ const Container = styled.div`
 
   ${media.lessThan('medium')`
     padding: ${({ theme }) => theme.layout.padding.mobile};
+    padding-bottom: 40px;
     grid-template-columns: none;
     grid-template-rows: 1fr;
 
