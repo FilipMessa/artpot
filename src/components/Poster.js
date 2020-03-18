@@ -2,7 +2,6 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import GatsbyImg from 'gatsby-image'
 import media from 'styled-media-query'
 import Text from './Text'
 
@@ -11,33 +10,31 @@ const Container = styled.div`
     margin-top: 30px;  
 `}
 
-  display: grid;
-  grid-template-areas:
-    'image'
-    'label';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
-const Image = styled(GatsbyImg)`
-  grid-column: -1/1;
-  grid-row: -1/1;
-  grid-area: image;
+const Image = styled.img`
+  max-height: 85vh;
   max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
 `
 const Label = styled(Text)`
   grid-area: label;
 `
 
+// @TODO mobile image
 const Poster = ({ data }) => {
   return (
     <Container>
-      <Image
-        fluid={data.markdownRemark.frontmatter.poster.childImageSharp.fluid}
-      />
-      <Label spaceAfter="large" spaceBefore="small" size="medium">
-        {data.markdownRemark.frontmatter.description}
-      </Label>
+      <div>
+        <Image
+          src={data.markdownRemark.frontmatter.poster.childImageSharp.fluid.src}
+        />
+        <Label spaceAfter="large" spaceBefore="small" size="medium">
+          {data.markdownRemark.frontmatter.description}
+        </Label>
+      </div>
     </Container>
   )
 }
@@ -56,7 +53,7 @@ export const query = graphql`
         poster {
           childImageSharp {
             fluid(maxWidth: 1400) {
-              ...GatsbyImageSharpFluid
+              src
             }
           }
         }
