@@ -45,4 +45,10 @@ art:
     dimensions: 300x6x4 cm
     image: >-
       /images/uploads/the-essence-of-this-earth-will-manifest-long-after-all-demands-on-it-disappear-wood-acrylic-on-canvas-300x6x4-cm-2012-detail-2.jpg
+  - type: artwork
+    year: '2012'
+    name: Untitled I
+    material: acrylic and oil on canvas
+    dimensions: 200x250 cm
+    image: /images/uploads/untitled-i-acrylic-and-oil-on-canvas-200x250-cm-2012.jpg
 ---
