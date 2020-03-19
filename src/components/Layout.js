@@ -4,10 +4,9 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import Header from './Header'
 import Navigation from './Navigation'
-import ScrollTop from './ScrollTop' 
+import ScrollTop from './ScrollTop'
 import SEO from './SEO'
 import theme from '../theme'
-import { useResponsive } from '../utils'
 
 const Container = styled.div`
   display: grid;
@@ -51,10 +50,7 @@ const Content = styled.div`
   grid-area: content;
 `
 
-const Layout = ({ children, withRightSpace = true }) => {
-  const { md: isMd } = useResponsive();
-  
-  return (
+const Layout = ({ children, withRightSpace = true }) => (
   <>
     <SEO />
     <Container withRightSpace={withRightSpace}>
@@ -66,10 +62,10 @@ const Layout = ({ children, withRightSpace = true }) => {
         <main>{children}</main>
       </Content>
       {withRightSpace && <RightSpace />}
-      {isMd && <ScrollTop />}
+      <ScrollTop />
     </Container>
   </>
-)}
+)
 
 Layout.propTypes = {
   withRightSpace: PropTypes.bool,

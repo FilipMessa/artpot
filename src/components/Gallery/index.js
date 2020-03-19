@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { isMobile } from '../../utils'
 import GalleryImage from './GalleryImg'
 
-const WHITE = '#fff';
+const WHITE = '#fff'
 const BLACK = 'rgba(0, 0, 0, 0.6)'
 
 const Container = styled.div`
@@ -19,10 +19,11 @@ const Container = styled.div`
 `
 
 const getButtonStyles = (base, state) => {
-  return ({
-  ...base,
-  color: state.isFullscreen? WHITE : BLACK,
-})}
+  return {
+    ...base,
+    color: state.isFullscreen ? WHITE : BLACK,
+  }
+}
 
 const modalCustomStyles = {
   blanket: base => ({
@@ -33,9 +34,8 @@ const modalCustomStyles = {
 
 const carouselCustomStyles = {
   header: base => ({
-      ...base,
-      background: 'none !important',
-    
+    ...base,
+    background: 'none !important',
   }),
   footer: base => ({
     ...base,
@@ -45,7 +45,7 @@ const carouselCustomStyles = {
   headerFullscreen: getButtonStyles,
   navigationPrev: getButtonStyles,
   navigationNext: getButtonStyles,
-  footerCount: getButtonStyles
+  footerCount: getButtonStyles,
 }
 
 const Gallery = ({ images }) => {
@@ -62,7 +62,7 @@ const Gallery = ({ images }) => {
       default: { src },
     },
   }) => ({
-    src 
+    src,
   })
 
   const lightImgs = images.map(getImagesSrc)
