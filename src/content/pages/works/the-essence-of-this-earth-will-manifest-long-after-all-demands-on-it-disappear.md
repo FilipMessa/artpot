@@ -51,4 +51,16 @@ art:
     material: acrylic and oil on canvas
     dimensions: 200x250 cm
     image: /images/uploads/untitled-i-acrylic-and-oil-on-canvas-200x250-cm-2012.jpg
+  - type: artwork
+    year: '2012'
+    image: /images/uploads/untitled-ii-acrylic-and-oil-on-canvas-200x250-cm-2012.jpg
+    name: Untitled II
+    material: acrylic and oil on canvas
+    dimensions: 200x250 cm
+  - type: artwork
+    year: '2012'
+    name: Horizon and the sky
+    material: oil on canvas
+    dimensions: 100x140 cm
+    image: /images/uploads/horizon-and-the-sky-oil-on-canvas-100x140-cm-2012.jpg
 ---
