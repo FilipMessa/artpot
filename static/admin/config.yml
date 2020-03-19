@@ -43,7 +43,12 @@ collections:
                   widget: "string",
                   required: true,
                 }
-              - { label: "Dimensions", name: "dimensions", widget: "string" }
+              - {
+                  label: "Dimensions",
+                  name: "dimensions",
+                  widget: "string",
+                  required: false,
+                }
               - {
                   label: "Year",
                   name: "year",
