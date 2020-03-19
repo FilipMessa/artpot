@@ -7,7 +7,7 @@ export function ImageLabel({ name, material, dimensions, year, type }) {
     case IMAGE_TYPE.ARTWORK:
       return (
         <span>
-          {name}, <span style={{ whiteSpace: 'nowrap' }}>{dimensions}</span>,{' '}
+          {name}, {dimensions && <span style={{ whiteSpace: 'nowrap' }}>{dimensions}{" "}</span>},
           {material}, {year}
         </span>
       )
