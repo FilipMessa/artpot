@@ -63,10 +63,10 @@ module.exports = {
         name: 'Artpot',
         short_name: 'Artpot',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#fff',
+        theme_color: '#FFF',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // TODO change This path is relative to the root of the site.// This path is relative to the root of the site.
+        icon: 'src/images/favicon.png',
       },
     },
     'gatsby-plugin-netlify-cms',
