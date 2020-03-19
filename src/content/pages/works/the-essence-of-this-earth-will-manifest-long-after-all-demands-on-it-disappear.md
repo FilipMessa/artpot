@@ -63,4 +63,10 @@ art:
     material: oil on canvas
     dimensions: 100x140 cm
     image: /images/uploads/horizon-and-the-sky-oil-on-canvas-100x140-cm-2012.jpg
+  - type: artwork
+    year: '2012'
+    name: Horizon
+    image: /images/uploads/horizon-oil-on-canvas-100x140-cm-2012.jpg
+    material: oil on canvas
+    dimensions: 100x140 cm
 ---
