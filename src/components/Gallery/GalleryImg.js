@@ -108,7 +108,7 @@ export const query = graphql`
     id
     name
     childImageSharp {
-      desktop: fixed(height: 230) {
+      desktop: fixed(height: 260) {
         ...GatsbyImageSharpFixed
       }
       mobile: fixed(width: 768) {
