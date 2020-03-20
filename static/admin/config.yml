@@ -11,6 +11,7 @@ collections:
     label: "Works"
     folder: "src/content/pages/works"
     create: true
+    identifier_field: makerName
     editor:
       preview: false
     fields:
@@ -52,7 +53,7 @@ collections:
               - {
                   label: "Year",
                   name: "year",
-                  widget: "date",
+                  widget: "datetime",
                   format: "YYYY",
                   dateFormat: "YYYY",
                   timeFormat: "YYYY",
@@ -67,7 +68,7 @@ collections:
               - {
                   label: "Year",
                   name: "year",
-                  widget: "date",
+                  widget: "datetime",
                   format: "YYYY",
                   dateFormat: "YYYY",
                   timeFormat: "YYYY",
