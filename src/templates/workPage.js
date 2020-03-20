@@ -3,6 +3,7 @@ import React from 'react'
 import { markdownImages } from '../commonPropTypes'
 import Gallery from '../components/Gallery'
 import Layout from '../components/Layout'
+import ReadMore from '../components/ReadMore'
 
 import { ImageLabel } from '../components/ImageLabel'
 
@@ -47,6 +48,7 @@ const WorkPage = ({ data }) => {
 
   return (
     <Layout withRightSpace={false}>
+      <ReadMore text={data.markdownRemark?.frontmatter?.description} />
       <Gallery images={images} />
     </Layout>
   )
