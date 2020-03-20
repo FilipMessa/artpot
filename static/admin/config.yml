@@ -7,71 +7,70 @@ media_folder: static/images/uploads
 public_folder: /images/uploads
 
 collections:
-  - name: "works"
-    label: "Works"
-    folder: "src/content/pages/works"
+  - name: 'works'
+    label: 'Works'
+    folder: 'src/content/pages/works'
     create: true
-    identifier_field: makerName
     editor:
       preview: false
     fields:
-      - { label: "Type", name: "type", widget: "hidden", default: "work" }
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: 'Type', name: 'type', widget: 'hidden', default: 'work' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - {
-          label: "Description",
-          name: "description",
-          widget: "string",
+          label: 'Description',
+          name: 'description',
+          widget: 'string',
           required: false,
         }
-      - label: "Art"
-        name: "art"
-        widget: "list"
+      - label: 'Art'
+        name: 'art'
+        widget: 'list'
         types:
-          - label: "Artwork"
-            name: "artwork"
+          - label: 'Artwork'
+            name: 'artwork'
             widget: object
             fields:
               - {
-                  label: "Name",
-                  name: "name",
-                  widget: "string",
+                  label: 'Name',
+                  name: 'name',
+                  widget: 'string',
                   required: true,
                 }
               - { label: Image, name: image, widget: image, required: true }
               - {
-                  label: "Technique/Material",
-                  name: "material",
-                  widget: "string",
+                  label: 'Technique/Material',
+                  name: 'material',
+                  widget: 'string',
                   required: true,
                 }
               - {
-                  label: "Dimensions",
-                  name: "dimensions",
-                  widget: "string",
+                  label: 'Dimensions',
+                  name: 'dimensions',
+                  widget: 'string',
                   required: false,
                 }
               - {
-                  label: "Year",
-                  name: "year",
-                  widget: "datetime",
-                  format: "YYYY",
-                  dateFormat: "YYYY",
-                  timeFormat: "YYYY",
+                  label: 'Year',
+                  name: 'year',
+                  widget: 'datetime',
+                  format: 'YYYY',
+                  dateFormat: 'YYYY',
+                  timeFormat: 'YYYY',
                   required: true,
                 }
-          - label: "Photo"
-            name: "photo"
+          - label: 'Photo'
+            name: 'photo'
             widget: object
             fields:
-              - { label: "Name", name: "name", widget: string, required: true }
+              - { label: 'Name', name: 'name', widget: string, required: true }
               - { label: Image, name: image, widget: image, required: true }
               - {
-                  label: "Year",
-                  name: "year",
-                  widget: "datetime",
-                  format: "YYYY",
-                  dateFormat: "YYYY",
-                  timeFormat: "YYYY",
+                  label: 'Year',
+                  name: 'year',
+                  widget: 'datetime',
+                  format: 'YYYY',
+                  dateFormat: 'YYYY',
+                  timeFormat: 'YYYY',
                   required: true,
                 }
 
@@ -85,32 +84,32 @@ collections:
         label: Info
         name: info
         fields:
-          - { label: "Slug", name: "slug", widget: "hidden", default: "/info" }
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: 'Slug', name: 'slug', widget: 'hidden', default: '/info' }
+          - { label: 'Title', name: 'title', widget: 'string' }
           - {
-              label: "Body",
-              name: "body",
-              widget: "markdown",
+              label: 'Body',
+              name: 'body',
+              widget: 'markdown',
               buttons:
                 [
-                  "bold",
+                  'bold',
                   italic,
                   link,
-                  "heading-one",
-                  "heading-two",
-                  "bulleted-list",
+                  'heading-one',
+                  'heading-two',
+                  'bulleted-list',
                 ],
             }
       - file: src/content/pages/home.md
         label: Home
         name: home
         fields:
-          - { label: "Slug", name: "slug", widget: "hidden", default: "/home" }
-          - { label: "Title", name: "title", widget: "hidden" }
+          - { label: 'Slug', name: 'slug', widget: 'hidden', default: '/home' }
+          - { label: 'Title', name: 'title', widget: 'hidden' }
           - {
-              label: "Image",
-              name: "poster",
-              widget: "image",
+              label: 'Image',
+              name: 'poster',
+              widget: 'image',
               allow_multiple: false,
             }
-          - { label: "Description", name: "description", widget: "string" }
+          - { label: 'Description', name: 'description', widget: 'string' }
