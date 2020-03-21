@@ -14,10 +14,12 @@ const SubNavItem = styled(NavItem)`
 
 const query = graphql`
   query SubNavigationQuery {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(works)/" } }) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(setting)/" } }) {
       nodes {
         frontmatter {
-          title
+          navItems {
+            title 
+          }
         }
       }
     }
@@ -37,14 +39,14 @@ const getNavigationData = ({ allMarkdownRemark }) => {
   return (
     <NavContainer>
       <ul>
-        {allMarkdownRemark.nodes.map(({ frontmatter }) => (
+        {allMarkdownRemark.nodes[0].frontmatter.navItems.map(({ title }) => (
           <SubNavItem
-            key={frontmatter.title}
-            label={frontmatter.title}
-            to={`/works/${frontmatter.title
+            key={title}
+            label={title}
+            to={`/works/${title
               .toLowerCase()
               .replace(/ /g, '_')
-              .replace(/[^\w\s]/gi, '')}`} // @TODO refactor
+              .replace(/[^\w\s]/gi, '')}`} // @TODO refactor to helper function
           />
         ))}
       </ul>

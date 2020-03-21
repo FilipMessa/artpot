@@ -7,6 +7,26 @@ media_folder: static/images/uploads
 public_folder: /images/uploads
 
 collections:
+  - name: settings
+    label: Settings
+    editor:
+      preview: false
+    files:
+      - name: navigation-order
+        label: Navigation Order
+        file: src/content/settings/nav-order.md
+        fields:
+          - label: Navigation Item
+            name: navItems
+            widget: list
+            fields:
+              - label: Gallery title
+                name: title
+                widget: relation
+                collection: works
+                searchFields: [title]
+                valueField: title
+
   - name: 'works'
     label: 'Works'
     folder: 'src/content/pages/works'
