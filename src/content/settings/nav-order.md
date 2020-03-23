@@ -16,4 +16,5 @@ navItems:
   - title: The lead role
   - title: The possibility of not getting lost in the presence is not really real
   - title: A distant way is unclear
+  - title: Light is just a delusion
 ---
