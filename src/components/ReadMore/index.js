@@ -8,10 +8,16 @@ import Button from './components/Button'
 
 const Paragraph = styled.p`
   margin: 2.1em 0;
+  line-height: 1.3rem;
   ${media.greaterThan('medium')`
+    margin-top: 0;
+    margin-bottom: 50px;
     margin-left: 1.3em;
     margin-right: 1.3em;
   `}
+  br  {
+    display: none
+  }
 `
 
 const ReadMore = ({ text, lines = 3 }) => {

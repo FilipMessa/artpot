@@ -25,6 +25,8 @@ const Container = styled.div`
     width: 100%;
     flex-direction: column;
     margin-left: 0em;
+    margin-bottom: 2em;
+    
   `}
 
   &:hover {

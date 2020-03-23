@@ -9,7 +9,7 @@ import { useResponsive } from '../../utils'
 
 const OFFSET = 400
 const ANIMATION_DURATION = 0.433
-const MOBILE_TIMEOUT = 800
+const MOBILE_TIMEOUT = 900
 
 
 const Wrapper = styled.div`

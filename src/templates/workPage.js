@@ -1,11 +1,23 @@
 import { graphql } from 'gatsby'
 import React from 'react'
+import styled from 'styled-components'
+import media from 'styled-media-query'
 import { markdownImages } from '../commonPropTypes'
 import Gallery from '../components/Gallery'
 import Layout from '../components/Layout'
 import ReadMore from '../components/ReadMore'
 
 import { ImageLabel } from '../components/ImageLabel'
+
+
+// @TODO merge with the workpage
+const Wrapper = styled.div`
+  padding-left: 130px;
+  padding-top: 130px;
+  ${media.lessThan('medium')`
+    padding: 0;
+  `}
+`
 
 export const query = graphql`
   query WorkPageQuery($id: String!) {
@@ -45,11 +57,14 @@ const getImagesWithLabel = data =>
 
 const WorkPage = ({ data }) => {
   const images = React.useMemo(() => getImagesWithLabel(data), [data])
+  const description = data.markdownRemark?.frontmatter?.description
 
   return (
     <Layout withRightSpace={false}>
-      <ReadMore text={data.markdownRemark?.frontmatter?.description} />
-      <Gallery images={images} />
+      <Wrapper>
+        {description && <ReadMore text={description} /> }
+        <Gallery images={images} />
+      </Wrapper>
     </Layout>
   )
 }
