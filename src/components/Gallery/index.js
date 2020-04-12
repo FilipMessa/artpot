@@ -18,6 +18,15 @@ const Container = styled.div`
   `}
 `
 
+const FooterWrapper = styled.div`
+  margin-left: 56px;
+  padding-right: 10px;
+  position: absolute;
+  bottom: 5%;
+  max-width: calc(15vw - 56px);
+  color: ${BLACK}
+`
+
 const getButtonStyles = (base, state) => {
   return {
     ...base,
@@ -26,18 +35,14 @@ const getButtonStyles = (base, state) => {
 }
 
 const modalCustomStyles = {
-  blanket: base => ({
+  blanket: (base) => ({
     ...base,
     backgroundColor: `${WHITE} !important`,
   }),
 }
 
 const carouselCustomStyles = {
-  header: base => ({
-    ...base,
-    background: 'none !important',
-  }),
-  footer: base => ({
+  header: (base) => ({
     ...base,
     background: 'none !important',
   }),
@@ -52,17 +57,30 @@ const Gallery = ({ images }) => {
   const [modalIsOpen, setModalState] = React.useState(false)
   const [selectedIndex, setIndex] = React.useState(0)
 
-  const toggleLightbox = index => {
+  const toggleLightbox = (index) => {
     setModalState(!modalIsOpen)
     setIndex(index)
   }
 
   const getImagesSrc = ({
+    label,
+    name,
+    material,
+    dimensions,
+    year,
+    type,
     childImageSharp: {
       default: { src },
     },
   }) => ({
     src,
+    label,
+    name,
+    material,
+    dimensions,
+    year,
+    type,
+    caption: label,
   })
 
   const lightImgs = images.map(getImagesSrc)
@@ -85,11 +103,20 @@ const Gallery = ({ images }) => {
         <ModalGateway>
           {modalIsOpen ? (
             <Modal onClose={toggleLightbox} styles={modalCustomStyles}>
-              <Carousel
-                styles={carouselCustomStyles}
-                views={lightImgs}
-                currentIndex={selectedIndex}
-              />
+              <>
+                <Carousel
+                  components={{
+                    // eslint-disable-next-line react/prop-types
+                    Footer: ({currentView}) => {
+                      // eslint-disable-next-line react/prop-types
+                      return  currentView?.label &&<FooterWrapper>{currentView.label}</FooterWrapper>
+                    },
+                  }}
+                  styles={carouselCustomStyles}
+                  views={lightImgs}
+                  currentIndex={selectedIndex}
+                />
+              </>
             </Modal>
           ) : null}
         </ModalGateway>

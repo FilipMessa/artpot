@@ -3,6 +3,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { IMAGE_TYPE } from '../consts'
 
+const Text = styled.span`
+  line-height: 1.2em;
+`
+
 const NoWrap = styled.span`
   white-space: nowrap;
 `
@@ -10,16 +14,16 @@ export function ImageLabel({ name, material, dimensions, year, type }) {
   switch (type) {
     case IMAGE_TYPE.ARTWORK:
       return (
-        <span>
-          {name}, {dimensions && <NoWrap>{dimensions} </NoWrap>},
-          {material && <NoWrap>{material}</NoWrap>}, {year}
-        </span>
+        <Text>
+          {name}, {dimensions && <NoWrap>{dimensions}</NoWrap>},
+          {material && <NoWrap> {material}</NoWrap>}, {year}
+        </Text>
       )
     case IMAGE_TYPE.PHOTO:
       return (
-        <span>
+        <Text>
           {name}, {year}
-        </span>
+        </Text>
       )
 
     default:

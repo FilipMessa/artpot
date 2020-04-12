@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   /* react-image workaround for custom height */
   .react-images__view img  {
     max-height: 90vh;
+    max-width: 70vw;
   }
   .react-images__view--isFullscreen img {
     max-height: 100vh;
