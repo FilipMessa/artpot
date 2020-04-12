@@ -62,7 +62,7 @@ const Layout = ({ children, withRightSpace = true }) => (
         <main>{children}</main>
       </Content>
       {withRightSpace && <RightSpace />}
-      <ScrollTop />
+      {typeof window !== 'undefined' && <ScrollTop />}
     </Container>
   </>
 )

@@ -67,8 +67,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Artpot',
-        short_name: 'Artpot',
+        name: 'Petra Messa - Portfolio',
+        short_name: 'Petra Messa - Portfolio',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#FFF',
