@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Petra Messa',
-    description: 'Personal art portfolio',
-    keywords: 'art, portfolio, artist, paintings',
+    description: 'Petra Messa art portfolio',
+    keywords: 'art, portfolio, artist, paintings, messa, Petra Messa, Messa',
   },
   plugins: [
     'gatsby-plugin-sharp',
