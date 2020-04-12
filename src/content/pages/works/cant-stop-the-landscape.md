@@ -49,7 +49,7 @@ art:
     dimensions: 120x150 cm
     image: /images/uploads/The wall, oil on canvas, 120x150 cm, 2015, theme  Vladimír Slivka.jpg
     material: oil on canvas
-    name: The wall
+    name: The wall (theme Vladimír Slivka)
     year: '2015'
     theme: Vladimir Slivka
   - type: artwork
