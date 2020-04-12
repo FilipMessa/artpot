@@ -21,3 +21,7 @@ export function wrapRootElement({ element }) {
 wrapRootElement.propTypes = {
   element: PropTypes.element,
 }
+
+export const onServiceWorkerUpdateReady = () => {
+  window.location.reload(true)
+}
