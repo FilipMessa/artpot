@@ -4,7 +4,7 @@ title: Curriculum vitae
 ---
 # CV
 
-* Petra Mešša, maiden name Vojteková
+* Petra Messa, maiden name Vojteková
 * Born January 31. 1987 in Uherské Hradiště, CZ
 * Lives and works in Prague, CZ
 * Contact: **messa.petra@gmail.com**
@@ -33,7 +33,7 @@ title: Curriculum vitae
 
 ## GROUP EXHIBITIONS
 
-* 2018/ The Painting of the year 2014, Nedbalka Gallery , Bratislava, SK
+* 2018/ The Painting of the year 2018, Nedbalka Gallery , Bratislava, SK
 * 2018/ It will be taken by the Hand, Pragovaka Gallery, Praha, CZ
 * 2017/ Constructive Lyrics, Plzeň City Gallery , Plzeň, CZ
 * 2017/ What is mine is yours too, ABC Gallery, Bratislava, SK

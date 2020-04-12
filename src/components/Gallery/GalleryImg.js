@@ -14,12 +14,11 @@ const Container = styled.div`
   grid-template-areas:
     'image'
     'label';
-    
+
   display: flex;
   position: relative;
   margin-bottom: 1.3em;
   margin-left: 1.3em;
- 
 
   ${media.lessThan('medium')`
     width: 100%;
@@ -30,7 +29,7 @@ const Container = styled.div`
   `}
 
   &:hover {
-    p {
+    .label {
       opacity: 1;
     }
 
@@ -43,17 +42,28 @@ const Container = styled.div`
 `
 
 const Label = styled(Text)`
+  font-size: 0.9em;
+
+  ${media.greaterThan('medium')`
+      align-self: center;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 1em;
+    `}
+`
+
+const LabelWrapper = styled.div`
+  width: 100%;
   grid-area: label;
   transition: opacity ease-in-out 0.16s;
 
   ${media.greaterThan('medium')`
-      position: absolute;
-      opacity: 0;
-      align-self: center;
-      margin: 0 auto;
-      text-align: center;
-      padding: 0 1rem;
-    `}
+
+    position: absolute;
+    opacity: 0;
+    margin: 0 auto;
+    top: 46%;
+`}
 `
 
 const Picture = styled.picture`
@@ -67,17 +77,15 @@ const Picture = styled.picture`
 `
 
 const GalleryImg = ({ label, data, onClick, index }) => {
-  const size = isMobile() ? { height: data.mobile.height, width: data.mobile.width } : { height: data.desktop.height, width: data.desktop.width }
+  const size = isMobile()
+    ? { height: data.mobile.height, width: data.mobile.width }
+    : { height: data.desktop.height, width: data.desktop.width }
 
   const handleClick = React.useCallback(() => onClick(index), [index, onClick])
 
   return (
     <Container onClick={handleClick}>
-      <LazyLoad
-        once
-        offset={LAZY_LOADING.offset}
-        height={size.height}
-      >
+      <LazyLoad once offset={LAZY_LOADING.offset} height={size.height}>
         <Picture>
           <source
             media={`(max-width: ${breakPoints.medium})`}
@@ -90,7 +98,11 @@ const GalleryImg = ({ label, data, onClick, index }) => {
 
           <img src={data.default.src} alt={label} />
         </Picture>
-        {label && <Label spaceBefore="small">{label}</Label>}
+        {label && (
+          <LabelWrapper className="label">
+            <Label spaceBefore="small">{label}</Label>
+          </LabelWrapper>
+        )}
       </LazyLoad>
     </Container>
   )
@@ -123,4 +135,4 @@ export const query = graphql`
   }
 `
 
-export default React.memo(GalleryImg);
+export default React.memo(GalleryImg)

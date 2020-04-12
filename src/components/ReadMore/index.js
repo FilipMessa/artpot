@@ -15,8 +15,10 @@ const Paragraph = styled.p`
     margin-left: 1.3em;
     margin-right: 1.3em;
   `}
+  
   br  {
-    display: none
+    display: inline-block;
+    margin-right: 1em;
   }
 `
 

@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { isMobile } from '../../utils'
 import GalleryImage from './GalleryImg'
 
-const WHITE = '#fff'
+const WHITE = 'rgba(255, 255, 255, 0.90)'
 const BLACK = 'rgba(0, 0, 0, 0.6)'
 
 const Container = styled.div`
