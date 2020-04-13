@@ -29,6 +29,7 @@ const Poster = ({ data }) => {
     <Container>
       <div>
         <Image
+          alt={data.markdownRemark.frontmatter.name}
           src={data.markdownRemark.frontmatter.poster.childImageSharp.fluid.src}
         />
         <Label spaceAfter="large" spaceBefore="small" size="medium">
@@ -51,6 +52,7 @@ export const query = graphql`
       frontmatter {
         description
         poster {
+          name
           childImageSharp {
             fluid(maxWidth: 1400) {
               src
