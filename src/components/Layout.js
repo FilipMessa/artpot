@@ -7,6 +7,7 @@ import Navigation from './Navigation'
 import ScrollTop from './ScrollTop'
 import SEO from './SEO'
 import theme from '../theme'
+import { NoSSR } from './NoSSR'
 
 const Container = styled.div`
   display: grid;
@@ -62,7 +63,9 @@ const Layout = ({ children, withRightSpace = true }) => (
         <main>{children}</main>
       </Content>
       {withRightSpace && <RightSpace />}
-      {typeof window !== 'undefined' && <ScrollTop />}
+      <NoSSR>
+        <ScrollTop />
+      </NoSSR>
     </Container>
   </>
 )
