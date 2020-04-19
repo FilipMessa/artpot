@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import Header from './Header'
@@ -15,7 +15,8 @@ const Container = styled.div`
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas:
     'header header header'
-    'navbar content ${({ withRightSpace }) => withRightSpace ? 'rightSpace' : 'content'}';
+    'navbar content ${({ withRightSpace }) =>
+      withRightSpace ? 'rightSpace' : 'content'}';
   padding: ${({ theme }) => theme.layout.padding.desktop};
 
   ${media.lessThan('medium')`

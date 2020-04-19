@@ -1,13 +1,13 @@
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import Text from './Text'
 
 const Container = styled.div`
   ${media.lessThan('medium')`
-    margin-top: 30px;  
+    margin-top: 30px;
 `}
 
   display: flex;

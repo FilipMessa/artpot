@@ -1,10 +1,15 @@
 // TODO PropTypes
 /* eslint-disable react/prop-types */
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import theme from '../../theme/index'
-import { getColorByType, getFontSizes, getSpaceAfter, getSpaceBefore, getWeight } from './helpers'
-
+import {
+  getColorByType,
+  getFontSizes,
+  getSpaceAfter,
+  getSpaceBefore,
+  getWeight,
+} from './helpers'
 
 const StyledText = styled(({ element: TextElement, children, className }) => {
   return <TextElement className={className}>{children}</TextElement>

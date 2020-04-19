@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Truncate from 'react-truncate'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
@@ -15,8 +15,8 @@ const Paragraph = styled.p`
     margin-left: 1.3em;
     margin-right: 1.3em;
   `}
-  
-  br  {
+
+  br {
     display: inline-block;
     margin-right: 1em;
   }

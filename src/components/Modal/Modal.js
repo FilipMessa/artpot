@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import { useFullScreen } from 'react-browser-hooks'
@@ -10,7 +10,7 @@ const Overlay = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: 0;c/components/MarkdownRenderer/index.js
   right: 0;
   display: flex;
   justify-content: center;
@@ -61,7 +61,7 @@ const Modal = ({ onClose, children }) => {
     toggleFullscreen()
   }
 
-  const handleOverlayClick = e => {
+  const handleOverlayClick = (e) => {
     if (node.current && node.current.contains(e.target)) {
       // handle click Inside
       handleToggleFullscreen()

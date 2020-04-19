@@ -1,6 +1,6 @@
 // TODO Icon colors from theme
 
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import { FaAngleUp } from 'react-icons/fa'
 import media from 'styled-media-query'
@@ -11,14 +11,12 @@ const OFFSET = 400
 const ANIMATION_DURATION = 0.433
 const MOBILE_TIMEOUT = 900
 
-
 const Wrapper = styled.div`
   position: fixed;
   bottom: 20px;
   right: 20px;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity ${ANIMATION_DURATION}s ease-in-out;
-
 
   ${media.lessThan('medium')`
     bottom: 20px;
@@ -74,7 +72,12 @@ const ScrollTop = () => {
 
   return (
     <Wrapper isVisible={isVisible}>
-      <Button  disabled={!isVisible} onClick={scrollToTop} title="Scroll to top" type="button">
+      <Button
+        disabled={!isVisible}
+        onClick={scrollToTop}
+        title="Scroll to top"
+        type="button"
+      >
         <FaAngleUp size={32} color="grey" />
       </Button>
     </Wrapper>

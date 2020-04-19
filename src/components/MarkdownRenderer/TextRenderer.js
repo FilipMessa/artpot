@@ -1,11 +1,14 @@
-import React from 'react'
+import * as React from 'react'
 import PropTypes from 'prop-types'
 
 import Text from '../Text'
 
 const TextRenderer = ({ children, weight, element }) => {
-
-  return <Text element={element} weight={weight}>{children}</Text>
+  return (
+    <Text element={element} weight={weight}>
+      {children}
+    </Text>
+  )
 }
 
 TextRenderer.propTypes = {

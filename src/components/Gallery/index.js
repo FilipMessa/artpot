@@ -1,6 +1,6 @@
 import { media } from '@theme'
 import PropTypes from 'prop-types'
-import React from 'react'
+import * as React from 'react'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import styled from 'styled-components'
 import { isMobile } from '../../utils'
@@ -24,7 +24,7 @@ const FooterWrapper = styled.div`
   position: absolute;
   bottom: 5%;
   max-width: calc(15vw - 56px);
-  color: ${BLACK}
+  color: ${BLACK};
 `
 
 const getButtonStyles = (base, state) => {
@@ -107,9 +107,13 @@ const Gallery = ({ images }) => {
                 <Carousel
                   components={{
                     // eslint-disable-next-line react/prop-types
-                    Footer: ({currentView}) => {
+                    Footer: ({ currentView }) => {
                       // eslint-disable-next-line react/prop-types
-                      return  currentView?.label &&<FooterWrapper>{currentView.label}</FooterWrapper>
+                      return (
+                        currentView?.label && (
+                          <FooterWrapper>{currentView?.label}</FooterWrapper>
+                        )
+                      )
                     },
                   }}
                   styles={carouselCustomStyles}

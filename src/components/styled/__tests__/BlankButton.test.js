@@ -1,5 +1,5 @@
-//      
-import React from 'react'
+//
+import * as React from 'react'
 import { render } from '@testing-library/react'
 
 import BlankButton from '../BlankButton'
@@ -7,7 +7,10 @@ import BlankButton from '../BlankButton'
 describe('BlankButton', () => {
   test('render', () => {
     const { baseElement, getByText } = render(<BlankButton>Button</BlankButton>)
-    getByText('Button', (content, element) => element.tagName.toLowerCase() === 'button')
+    getByText(
+      'Button',
+      (content, element) => element.tagName.toLowerCase() === 'button'
+    )
     expect(baseElement.firstChild).toMatchInlineSnapshot(`
 .c0 {
   cursor: pointer;

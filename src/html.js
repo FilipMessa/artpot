@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from 'react'
+import * as React from 'react'
 import PropTypes from 'prop-types'
 
 export default function HTML(props) {
@@ -13,7 +13,11 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <link crossOrigin="anonymous" rel="preconnect" href="https://fonts.gstatic.com/" />
+        <link
+          crossOrigin="anonymous"
+          rel="preconnect"
+          href="https://fonts.gstatic.com/"
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

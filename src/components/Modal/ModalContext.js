@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { MODAL_STATES } from './consts'
 
 export const ModalContext = React.createContext({
