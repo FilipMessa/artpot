@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import ClipLoader from 'react-spinners/ClipLoader'
 import styled, { withTheme } from 'styled-components'
 import PropTypes from 'prop-types'
@@ -13,8 +13,8 @@ const Container = styled.div`
   background-color: red;
 `
 
-const ImgLoader = ({ size, theme = defaultTheme }) => (
-  <Container height={size.height} width={size.width}>
+const ImgLoader = ({ size, theme = defaultTheme}) => (
+  <Container height={size.height} width={size.width} >
     <ClipLoader
       color={theme.components.imageLoader.color}
       sizeUnit="px"

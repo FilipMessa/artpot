@@ -1,6 +1,6 @@
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import * as React from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 
 export const ContentSEO = ({ data }) => (
@@ -28,7 +28,7 @@ const SEO = () => (
         }
       }
     `}
-    render={(data) => <ContentSEO data={data} />}
+    render={data => <ContentSEO data={data} />}
   />
 )
 

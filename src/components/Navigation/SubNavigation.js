@@ -1,7 +1,7 @@
 import { useMatch } from '@reach/router'
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import NavItem from './NavItem'

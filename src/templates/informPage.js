@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import * as React from 'react'
+import React from 'react'
 import Layout from '../components/Layout'
 import MarkdownRenderer from '../components/MarkdownRenderer'
 

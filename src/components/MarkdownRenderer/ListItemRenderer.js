@@ -1,10 +1,10 @@
-import * as React from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import Text from '../Text'
 
 const ListItemRenderer = ({ children }) => {
-  return <Text element="li">{children}</Text>
+  return <Text element="li" >{children}</Text>
 }
 
 ListItemRenderer.propTypes = {

@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import { markdownImages } from '../commonPropTypes'
@@ -8,6 +8,7 @@ import Layout from '../components/Layout'
 import ReadMore from '../components/ReadMore'
 
 import { ImageLabel } from '../components/ImageLabel'
+
 
 // @TODO merge with the workpage
 const Wrapper = styled.div`
@@ -39,8 +40,8 @@ export const query = graphql`
   }
 `
 
-const getImagesWithLabel = (data) =>
-  data.markdownRemark?.frontmatter?.art?.map((item) => ({
+const getImagesWithLabel = data =>
+  data.markdownRemark?.frontmatter?.art?.map(item => ({
     ...item.image,
     label: (
       <ImageLabel
@@ -61,7 +62,7 @@ const WorkPage = ({ data }) => {
   return (
     <Layout withRightSpace={false}>
       <Wrapper>
-        {description && <ReadMore text={description} />}
+        {description && <ReadMore text={description} /> }
         <Gallery images={images} />
       </Wrapper>
     </Layout>

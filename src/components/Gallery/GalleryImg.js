@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import LazyLoad from 'react-lazyload'
 import { graphql } from 'gatsby'
@@ -25,7 +25,7 @@ const Container = styled.div`
     flex-direction: column;
     margin-left: 0em;
     margin-bottom: 2em;
-
+    
   `}
 
   &:hover {

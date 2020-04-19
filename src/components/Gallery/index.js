@@ -1,6 +1,6 @@
 import { media } from '@theme'
 import PropTypes from 'prop-types'
-import * as React from 'react'
+import React from 'react'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import styled from 'styled-components'
 import { isMobile } from '../../utils'
@@ -85,8 +85,6 @@ const Gallery = ({ images }) => {
 
   const lightImgs = images.map(getImagesSrc)
 
-  console.log(lightImgs)
-
   return (
     <>
       <Container>
@@ -113,7 +111,7 @@ const Gallery = ({ images }) => {
                       // eslint-disable-next-line react/prop-types
                       return (
                         currentView?.label && (
-                          <FooterWrapper>{currentView?.label}</FooterWrapper>
+                          <FooterWrapper>{currentView.label}</FooterWrapper>
                         )
                       )
                     },
