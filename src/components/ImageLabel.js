@@ -15,8 +15,8 @@ export function ImageLabel({ name, material, dimensions, year, type }) {
     case IMAGE_TYPE.ARTWORK:
       return (
         <Text>
-          {name}, {dimensions && <NoWrap>{dimensions}</NoWrap>},
-          {material && <NoWrap> {material}</NoWrap>}, {year}
+          {name}, {dimensions && <NoWrap>{dimensions},</NoWrap>}
+          {material && <NoWrap> {material},</NoWrap>} {year}
         </Text>
       )
     case IMAGE_TYPE.PHOTO:

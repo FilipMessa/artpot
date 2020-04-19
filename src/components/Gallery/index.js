@@ -85,6 +85,8 @@ const Gallery = ({ images }) => {
 
   const lightImgs = images.map(getImagesSrc)
 
+  console.log(lightImgs)
+
   return (
     <>
       <Container>

@@ -23,34 +23,34 @@ description: >-
 art:
   - type: photo
     image: /images/uploads/Diploma work 1.jpg
-    name: Diploma work, Installation view, 2014
+    name: Diploma work, Installation view
     year: '2014'
   - type: photo
     image: /images/uploads/Diploma work 2.jpg
-    name: Diploma work, Installation view, 2014
+    name: Diploma work, Installation view
     year: '2014'
   - type: photo
     image: /images/uploads/Diploma work 3.jpg
-    name: Diploma work, Installation view, 2014
+    name: Diploma work, Installation view
     year: '2014'
   - type: photo
     image: /images/uploads/Diploma work 4.jpg
-    name: Diploma work, Installation view, 2014
+    name: Diploma work, Installation view
     year: '2014'
   - type: photo
     image: /images/uploads/Diploma work 5.jpg
-    name: Diploma work, Installation view, 2014
+    name: Diploma work, Installation view
     year: '2014'
   - type: photo
     image: /images/uploads/Diploma work 6.jpg
-    name: Diploma work, Installation view, 2014
+    name: Diploma work, Installation view
     year: '2014'
   - type: photo
     image: /images/uploads/Diploma work 7.jpg
-    name: Diploma work, Installation view, 2014
+    name: Diploma work, Installation view
     year: '2014'
   - type: photo
     image: /images/uploads/Diploma work 8.jpg
-    name: Diploma work, Installation view, 2014
+    name: Diploma work, Installation view
     year: '2014'
 ---
