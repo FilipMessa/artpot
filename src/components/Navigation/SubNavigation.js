@@ -1,3 +1,4 @@
+import { useMatch } from '@reach/router'
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -18,7 +19,7 @@ const query = graphql`
       nodes {
         frontmatter {
           navItems {
-            title 
+            title
           }
         }
       }
@@ -30,12 +31,14 @@ const NavContainer = styled.nav`
   margin-top: 50px;
 `
 
-const getNavigationData = ({ allMarkdownRemark }) => {
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : ''
+const RenderNavigationData = ({ allMarkdownRemark }) => {
+  const isWorkpage = useMatch('/works/*')
 
-  if (!pathname.match('/works')) {
+  // SubNavigation should render only for workpages
+  if (!isWorkpage) {
     return null
   }
+
   return (
     <NavContainer>
       <ul>
@@ -54,12 +57,12 @@ const getNavigationData = ({ allMarkdownRemark }) => {
   )
 }
 
-getNavigationData.propTypes = {
+RenderNavigationData.propTypes = {
   allMarkdownRemark: PropTypes.object,
 }
 
 const SubNavigation = () => {
-  return <StaticQuery query={query} render={getNavigationData} />
+  return <StaticQuery query={query} render={RenderNavigationData} />
 }
 
 export default React.memo(SubNavigation)
