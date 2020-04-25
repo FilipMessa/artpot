@@ -111,7 +111,7 @@ const Gallery = ({ images }) => {
                       // eslint-disable-next-line react/prop-types
                       return (
                         currentView?.label && (
-                          <FooterWrapper>{currentView.label}</FooterWrapper>
+                          <FooterWrapper>{currentView?.label}</FooterWrapper>
                         )
                       )
                     },
